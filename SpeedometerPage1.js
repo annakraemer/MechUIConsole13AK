@@ -72,7 +72,7 @@ SpeedometerPage1.prototype.runCommand = function(){
 
 SpeedometerPage1.prototype.demoAction = function(){
   console.log("ran demo");
-  manager.changeState(STATE_FISHYTANK)
-  manager.change(FISHYTANK.master.events.spinTank);
+  manager.changeState(STATE_FISHYTANK);
+  FISHYTANK.master.events.spinTank();
   
 }

@@ -28,7 +28,8 @@ var BERNOULLIFAN = {
     },
     events: {
       demo: function demo() { manager.sendEvent(0, 1); },
-      homeFan: function homeFan() { manager.sendEvent(1, 1); }
+      homeFan: function homeFan() { manager.sendEvent(1, 1); },
+      liftBall: function liftBall() { manager.sendEvent(2, 1); }
     }
   },
   tablet: {
@@ -48,7 +49,7 @@ var FISHYTANK = {
       fishyStepperSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
     },
     events: {
-      
+      spinTank: function spinTank() { manager.sendEvent(0, 2); }
     }
   },
   tablet: {
@@ -70,7 +71,7 @@ var MAGNETICVORTEX = {
       DCMotorSpeed: new HardwareValue(3, 2, Manager.TYPE_UINT16)
     },
     events: {
-      
+      pistonStop: function pistonStop() { manager.sendEvent(0, 3); }
     }
   },
   tablet: {
