@@ -1,4 +1,5 @@
 //sketch.js - ACTUAL, created by Anna K.
+//Included SpeedometerPage1 with the Fishy Tank, no clue if it works with the hardware - Anna 3rd period 
 
 var homeButtonImage;
 var buttonSize;
@@ -7,7 +8,7 @@ var sliderImage;
 
 function preload()
 {
-  sliderImage = loadImage("/libs/images/redcircle.png");
+  //sliderImage = loadImage("/libs/images/redcircle.png");
 }
 
 var stage = new Stage();
@@ -36,20 +37,16 @@ function setup()
   openingScene = new ConsoleOpeningScene(startGame);
   stage.addScene('ConsoleOpeningScene', openingScene);
   
-  var pickGameButtonNames = ["Blue Spinny Lifter", "Swishy Boats", "Magnetic Vortex", "Red Spinny Lifter"];
+  var pickGameButtonNames = ["Fishy Tank", "Swishy Boats", "Magnetic Vortex", "Spinny Lifter"];
   //fix images here
-  var pickGameButtonImages = [loadImage("CUPPic.png"), loadImage("gyroPic.png"), loadImage("wheelPic.png"), loadImage("COAMPic.png")];
-  var pickGameButtonActions = [SpinnyLifter1Action, SwishyBoatsAction, VortexAction, SpinnyLifter2Action];
+  //var pickGameButtonImages = [loadImage("CUPPic.png"), loadImage("gyroPic.png"), loadImage("wheelPic.png"), loadImage("COAMPic.png")];
+  var pickGameButtonActions = [FishyTankAction, SwishyBoatsAction, VortexAction, SpinnyLifterAction];
   
-   menuScene = new ImageButtonsScene("Pick A Game", 
+   menuScene = new ButtonsScene("Pick A Game", 
                                   null,
                                   pickGameButtonNames,
-                                  pickGameButtonImages,
                                   pickGameButtonActions,
-                                  'rectOutline',
                                   function() {stage.transitionTo('ConsoleOpeningScene');},
-                                  null,
-                                  null,
                                   null,
                                   {size:50, leading:50});
   menuScene.addActor(new AdminButton(adminAction));
@@ -58,8 +55,11 @@ function setup()
   BCSketch = new BCSketch(manager, stage);
   stage.addScene('BCSketch', BCSketch);
   
-  AdminSketch = new AdminSketch(manager, stage, BCSketch, gameButtonNames, gameButtonActions);
-  stage.addScene('AdminSketch', AdminSketch)
+  AdminSketch = new AdminSketch(manager, stage, BCSketch, pickGameButtonNames, pickGameButtonActions);
+  stage.addScene('AdminSketch', AdminSketch);
+  
+  SpeedometerPage1 = new SpeedometerPage1();
+  stage.addScene('SpeedometerPage1', SpeedometerPage1);
   
   stage.transitionTo('ConsoleOpeningScene');
 
@@ -67,6 +67,10 @@ function setup()
 
 function draw() {
   stage.draw();
+}
+
+function startGame(){
+  stage.transitionTo('menuScene');
 }
 
 function homeAction(){
@@ -87,15 +91,14 @@ function openingSceneAction() {
 }
 
 
-function SpinnyLifter1Action(){
-  console.log("Spinny Lifter Action");
-  stage.tranisitonTo('SpeedometerPage1');
-  //SpinnyLifter1Action
+function FishyTankAction(){
+  console.log("Fishy Tank Action");
+  stage.transitionTo('SpeedometerPage1');
 }
 
 
-function SpinnyLifter2Action (){
-  console.log("Spinny Lifter 2 Action");
+function SpinnyLifterAction (){
+  console.log("Spinny Lifter Action");
   //SpinnyLifter2Action
 }
 
