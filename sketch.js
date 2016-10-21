@@ -20,8 +20,13 @@ AdminSketch,
 BCSketch,
 SpeedometerPage1,
 SpeedometerPage2,
+<<<<<<< HEAD
 SwishyBoats;
 //ControlPanel;
+=======
+SwishyBoats,
+Vortex;
+>>>>>>> b139d1922aa79d551f57eba4b23510f403bedece
 
 function setup()
 {
@@ -66,8 +71,13 @@ function setup()
   SwishyBoats = new SwishyBoats();
   stage.addScene('SwishyBoats', SwishyBoats);
   
+<<<<<<< HEAD
   //ControlPanel = new ControlPanel();
   //stage.addScene('ControlPanel', ControlPanel);
+=======
+  Vortex = new Vortex();
+  stage.addScene("Vortex", Vortex);
+>>>>>>> b139d1922aa79d551f57eba4b23510f403bedece
   
   stage.transitionTo('ConsoleOpeningScene');
 
@@ -114,11 +124,12 @@ function SwishyBoatsAction(){
   console.log("Swishy Boats Action");
   stage.transitionTo('SwishyBoats');
 }
-
-function VortexAction(){
+  
+  function VortexAction(){
   console.log("Vortex Action")
-  //VortexAction
-}
+  stage.transitionTo('Vortex');
+  manager.changeState(STATE_MAGNETICVORTEX);
+  }
 
 
 window.touchStarted = stage.touchStarted.bind(stage);

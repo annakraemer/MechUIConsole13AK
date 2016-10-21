@@ -19,19 +19,19 @@ function SwishyBoats(){
   this.homeButton = new HomeButton(homeAction);
   this.addActor(this.homeButton);
   
-  this.title = new Label(windowWidth/2, windowHeight*0.16, "Swishy Boats", {size:70, leading:50});
+  this.title = new Label(windowWidth/2, windowHeight*0.16, "SwishyBoats", {size:70, leading:50});
   this.addActor(this.title);
 
     /////////////////////////////// BUTTONS /////////////////////////////////
   
   //This button runs the boats
   this.runBoats = new TextButton(
-                                    windowWidth*0.4 - 100, // x position
-									windowHeight*0.5 - 50, // y position
+                                    windowWidth*0.2 - 100, // x position
+									windowHeight*0.3 - 50, // y position
 									200, // width of button
 									100, // height of button
 									BLUE, // color of button
-									"Go", // text on button
+									"Speed Up!", // text on button
 									attrs, // text attributes
 									this.runBoatsAction.bind(this), // action to call
 									'rect'); // shape
@@ -39,12 +39,12 @@ function SwishyBoats(){
   
   //This button stops the boats
   this.stopBoats = new TextButton(
-                                    windowWidth*0.6 - 100, // x position
-									windowHeight*0.5 - 50, // y position
+                                    windowWidth*0.2 - 100, // x position
+									windowHeight*0.3 - 50, // y position
 									200, // width of button
 									100, // height of button
 									RED, // color of button
-									"Stop", // text on button
+									"Speed Up!", // text on button
 									attrs, // text attributes
 									this.stopBoatsAction.bind(this), // action to call
 									'rect'); // shape
@@ -53,7 +53,7 @@ function SwishyBoats(){
 
 }
 
-_inherits(SwishyBoats, Scene);
+_inherits(SwishyBoats, scene);
 
   ///////////////////////////////// BUTTON SUB FUNCTIONS //////////////////////////////////
 
