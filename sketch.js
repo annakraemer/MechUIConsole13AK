@@ -21,6 +21,7 @@ BCSketch,
 SpeedometerPage1,
 SpeedometerPage2,
 SwishyBoats;
+//ControlPanel;
 
 function setup()
 {
@@ -64,6 +65,9 @@ function setup()
   
   SwishyBoats = new SwishyBoats();
   stage.addScene('SwishyBoats', SwishyBoats);
+  
+  //ControlPanel = new ControlPanel();
+  //stage.addScene('ControlPanel', ControlPanel);
   
   stage.transitionTo('ConsoleOpeningScene');
 
