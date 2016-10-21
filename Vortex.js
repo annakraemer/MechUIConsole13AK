@@ -25,7 +25,7 @@ function Vortex(){
 
     /////////////////////////////// BUTTONS /////////////////////////////////
   
-  //This button speeds up the vortex
+  /*//This button speeds up the vortex
   var fastSpeedValue;
   this.speedUp = new TextButton(
                                     windowWidth*0.2 - 100, // x position
@@ -66,8 +66,26 @@ function Vortex(){
 									attrs, // text attributes
 									this.restartAction.bind(this), // action to call
 									'rect'); // shape
-  this.addActor(this.restart); // Adds button "actor" to the scene
+  this.addActor(this.restart); // Adds button "actor" to the scene*/
 
+  //slide to control speed
+  this.fixedPositionSlider =  new Slider(
+                           windowWidth*0.26, // x position
+                           windowHeight*0.73, // y position
+                           windowWidth*0.5, // size of slider
+                           0, // min value of slider
+                           200, // max value of slider
+                           0, // default value of slider
+                            this.fixedChangePosition.bind(this)); // action to call on slider change
+  this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
+  this.addActor(this.fixedPositionSlider); // adds slider to scene
+  
+  this.fixedSlideLabel = new Label(
+                       windowWidth*0.5, // x position
+                       windowHeight*0.67, // y position
+                       "Speed\n\n\n0                                           100", // text
+                       {size: windowWidth*0.03, leading: windowHeight*0.09}); // text attributes
+  this.addActor(this.fixedSlideLabel); // adds text to scene
 
 }
 
@@ -96,4 +114,13 @@ Vortex.prototype.restartAction = function() {
   console.log ("restart Action");
   //No clue if this works
   MAGNETICVORTEX.master.values(DCMotorSpeed = restartValue);
+  
+Vortex.prototype.fixedChangePosition = function(slidePosition) {
+  console.log("Current value of slider is " + slidePosition);
+  //manager.change(MAGNETICVORTEX.master.values.distance, slidePosition);
+  //console.log("Curret value of the variable is " + PERPETUALBALLEVENT.master.values.railPosition);
+}
+
+Vortex.prototype.finishedAction = function() {
+  stage.resume();
 }
