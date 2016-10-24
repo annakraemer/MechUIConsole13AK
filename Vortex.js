@@ -71,7 +71,7 @@ function Vortex(){
   //slide to control speed
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.26, // x position
-                           windowHeight*0.73, // y position
+                           windowHeight*0.5, // y position
                            windowWidth*0.5, // size of slider
                            0, // min value of slider
                            200, // max value of slider
@@ -82,7 +82,7 @@ function Vortex(){
   
   this.fixedSlideLabel = new Label(
                        windowWidth*0.5, // x position
-                       windowHeight*0.67, // y position
+                       windowHeight*0.42, // y position
                        "Speed\n\n\n0                                           100", // text
                        {size: windowWidth*0.03, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
