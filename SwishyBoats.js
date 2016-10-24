@@ -53,7 +53,7 @@ function SwishyBoats(){
 
 }
 
-_inherits(SwishyBoats, scene);
+_inherits(SwishyBoats, Scene);
 
   ///////////////////////////////// BUTTON SUB FUNCTIONS //////////////////////////////////
 

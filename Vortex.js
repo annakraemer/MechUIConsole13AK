@@ -114,7 +114,8 @@ Vortex.prototype.restartAction = function() {
   console.log ("restart Action");
   //No clue if this works
   MAGNETICVORTEX.master.values(DCMotorSpeed = restartValue);
-  
+}
+
 Vortex.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   //manager.change(MAGNETICVORTEX.master.values.distance, slidePosition);

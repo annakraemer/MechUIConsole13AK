@@ -4,11 +4,11 @@
 var homeButtonImage;
 var buttonSize;
 
-var sliderImage;
+var logo;
 
 function preload()
 {
-  //sliderImage = loadImage("/libs/images/redcircle.png");
+  logo = loadImage("/libs/images/redcircle.png");
 }
 
 var stage = new Stage();
