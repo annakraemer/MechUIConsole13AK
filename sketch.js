@@ -67,7 +67,7 @@ function setup()
   stage.addScene('SwishyBoats', SwishyBoats);
   
   Vortex = new Vortex();
-  stage.addScene("Vortex", Vortex);
+  stage.addScene('Vortex', Vortex);
   
   stage.transitionTo('ConsoleOpeningScene');
 
