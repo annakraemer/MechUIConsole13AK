@@ -25,26 +25,26 @@ function Vortex(){
 
     /////////////////////////////// BUTTON AND SLIDER /////////////////////////////////
   
+  //demo button
   this.demo = new TextButton(
-                                    windowWidth*0.2 - 100, // x position
-									windowHeight*0.3 - 50, // y position
-									200, // width of button
-									100, // height of button
-									BLUE, // color of button
-									"demo", // text on button
-									attrs, // text attributes
-									this.demoAction.bind(this), // action to call
-									'rect'); // shape
+                           windowWidth*0.475 - 100, // x position
+									         windowHeight*0.8 - 50, // y position
+									         300, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Demo", // text on button
+									         attrs, // text attributes
+									         this.demoAction.bind(this), // action to call
+									         'rect'); // shape
   this.addActor(this.demo); // Adds button "actor" to the scene
-}
-  
+
   //slide to control speed
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.26, // x position
                            windowHeight*0.5, // y position
                            windowWidth*0.5, // size of slider
                            0, // min value of slider
-                           200, // max value of slider
+                           100, // max value of slider
                            0, // default value of slider
                             this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
@@ -69,11 +69,13 @@ Vortex.prototype.setup = function(){
   manager.changeState(STATE_MAGNETICVORTEX);
 }
 
+//demo button action
 Vortex.prototype.demoAction = function() {
   console.log ("Demo button");
   MAGNETICVORTEX.master.events.demo;
 }
 
+//update slider position
 Vortex.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(MAGNETICVORTEX.master.values.DCMotorSpeed, slidePosition);

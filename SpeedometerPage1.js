@@ -1,3 +1,84 @@
+//Scene: Vortex - edited by Chloe
+//FINISHED - NEEDS HW TESTING
+
+"use strict";
+
+function SpeedometerPage1(){
+
+ /////////////////////////////// BASIC SETUP ///////////////////////////////
+	
+  Scene.call(this);
+  
+  attrs = {size:25, leading:25};
+  
+  //Setting maximum variables
+  this.maxDistance = 200;
+  
+  this.bgBorder = new BackgroundBorder();
+  this.addActor(this.bgBorder);
+  
+  this.homeButton = new HomeButton(homeAction);
+  this.addActor(this.homeButton);
+  
+  this.title = new Label(windowWidth/2, windowHeight*0.16, "Centripetal Force", {size:70, leading:50});
+  this.addActor(this.title);
+
+    /////////////////////////////// BUTTON AND SLIDER /////////////////////////////////
+  
+  //demo button
+  this.demo = new TextButton(
+                           windowWidth*0.475 - 100, // x position
+									         windowHeight*0.8 - 50, // y position
+									         300, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Demo", // text on button
+									         attrs, // text attributes
+									         this.demoAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.demo); // Adds button "actor" to the scene
+}
+
+  var fastSpeedValue;
+  this.demo = new TextButton(
+                           windowWidth*0.2 - 100, // x position
+									         windowHeight*0.3 - 50, // y position
+									         200, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Demo", // text on button
+									         attrs, // text attributes
+									         this.demoAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.demo); // Adds button "actor" to the scene
+}
+
+_inherits(Vortex, Scene);
+
+  ///////////////////////////////// BUTTON SUB FUNCTIONS //////////////////////////////////
+
+Vortex.prototype.setup = function(){
+  console.log("Changed state to MAGNETICVORTEX");
+  manager.changeState(STATE_MAGNETICVORTEX);
+}
+
+//demo button action
+Vortex.prototype.demoAction = function() {
+  console.log ("Demo button");
+  MAGNETICVORTEX.master.events.demo;
+}
+
+//update slider position
+Vortex.prototype.fixedChangePosition = function(slidePosition) {
+  console.log("Current value of slider is " + slidePosition);
+  manager.change(MAGNETICVORTEX.master.values.DCMotorSpeed, slidePosition);
+  //console.log("Curret value of the variable is " + PERPETUALBALLEVENT.master.values.railPosition);
+}
+
+Vortex.prototype.finishedAction = function() {
+  stage.resume();
+}
+
 //Scene: FishyTank - edited by Chloe
 //NOT FINISHED - NEEDS EDITING/RENAMING
 
@@ -37,19 +118,7 @@ function SpeedometerPage1()
   this.addActor(this.homeButton);
   
   //This button plays the demo
-  var fastSpeedValue;
-  this.demo = new TextButton(
-                                    windowWidth*0.2 - 100, // x position
-									windowHeight*0.3 - 50, // y position
-									200, // width of button
-									100, // height of button
-									BLUE, // color of button
-									"demo", // text on button
-									attrs, // text attributes
-									this.demoAction.bind(this), // action to call
-									'rect'); // shape
-  this.addActor(this.demo); // Adds button "actor" to the scene
-}
+  
 
 _inherits(SpeedometerPage1, Scene);
 

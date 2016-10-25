@@ -71,8 +71,8 @@ var MAGNETICVORTEX = {
       DCMotorSpeed: new HardwareValue(3, 2, Manager.TYPE_UINT16)
     },
     events: {
-      pistonStop: function pistonStop() { manager.sendEvent(0, 3); }
-      demo: function demo() {manager.sendEvent(1, 3);}
+      pistonStop: function pistonStop() { manager.sendEvent(0, 3); },
+      demo: function demo() { manager.sendEvent(1, 3); }
     }
   },
   tablet: {

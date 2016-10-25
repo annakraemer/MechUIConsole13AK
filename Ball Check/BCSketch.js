@@ -45,7 +45,7 @@ function BCSketch(managerName, stageName)
   
   this.errorScene = new ErrorScene('ErrorScene', "Error!", null);
   stage.addScene('ErrorScene', this.errorScene);
-
+/*
   this.managerName.setEventHandler(BALLCHECK.tablet.events.resume, this.resumeAction.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.checkBallDone, this.moveBall.bind(this)); 
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib1Ready, this.amib1ReadyState.bind(this));
@@ -54,6 +54,7 @@ function BCSketch(managerName, stageName)
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib1NotReady, this.amib1NotReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib2NotReady, this.amib2NotReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib3NotReady, this.amib3NotReadyState.bind(this));
+  */
 }
 _inherits(BCSketch, Scene);
 
