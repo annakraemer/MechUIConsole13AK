@@ -1,5 +1,5 @@
-//Scene: Vortex - edited by Chloe
-//FINISHED - NEEDS HW TESTING
+//Scene: SpeedometerPage1
+//NOT FINISHED - NEEDS EDITING/RENAMING
 
 "use strict";
 
@@ -53,36 +53,37 @@ function SpeedometerPage1(){
   this.addActor(this.demo); // Adds button "actor" to the scene
 }
 
-_inherits(Vortex, Scene);
+_inherits(SpeedometerPage1, Scene);
 
   ///////////////////////////////// BUTTON SUB FUNCTIONS //////////////////////////////////
 
-Vortex.prototype.setup = function(){
+SpeedometerPage1.prototype.setup = function(){
   console.log("Changed state to MAGNETICVORTEX");
   manager.changeState(STATE_MAGNETICVORTEX);
 }
 
 //demo button action
-Vortex.prototype.demoAction = function() {
+SpeedometerPage1.prototype.demoAction = function() {
   console.log ("Demo button");
   MAGNETICVORTEX.master.events.demo;
 }
 
 //update slider position
-Vortex.prototype.fixedChangePosition = function(slidePosition) {
+SpeedometerPage1.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(MAGNETICVORTEX.master.values.DCMotorSpeed, slidePosition);
   //console.log("Curret value of the variable is " + PERPETUALBALLEVENT.master.values.railPosition);
 }
 
-Vortex.prototype.finishedAction = function() {
+SpeedometerPage1.prototype.finishedAction = function() {
   stage.resume();
 }
 
 //Scene: FishyTank - edited by Chloe
 //NOT FINISHED - NEEDS EDITING/RENAMING
+//Hey what is this? -Anna
 
-"use strict";
+/*"use strict";
 
 function SpeedometerPage1()
 {
@@ -150,3 +151,4 @@ SpeedometerPage1.prototype.demoAction = function(){
   FISHYTANK.master.events.spinTank();
   
 }
+*/

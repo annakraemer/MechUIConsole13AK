@@ -1,5 +1,4 @@
 //sketch.js - ACTUAL, created by Anna K.
-//Included SpeedometerPage1 with the Fishy Tank, no clue if it works with the hardware - Anna 3rd period 
 
 var homeButtonImage;
 var buttonSize;
@@ -62,6 +61,9 @@ function setup()
   
   SpeedometerPage1 = new SpeedometerPage1();
   stage.addScene('SpeedometerPage1', SpeedometerPage1);
+  
+  SpeedometerPage2 = new SpeedometerPage2();
+  stage.addScene('SpeedometerPage2', SpeedometerPage2);
   
   SwishyBoats = new SwishyBoats();
   stage.addScene('SwishyBoats', SwishyBoats);
