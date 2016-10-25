@@ -1,3 +1,8 @@
+//Scene: FishyTank - edited by Chloe
+//NOT FINISHED - NEEDS EDITING/RENAMING
+
+"use strict";
+
 function SpeedometerPage1()
 {
   this.speedometerWidth = windowWidth/2.25;

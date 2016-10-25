@@ -1,5 +1,5 @@
-//Scene: Vortex - created by Anna
-//NOT READY - 6th period
+//Scene: Vortex - edited by Chloe
+//FINISHED - NEEDS HW TESTING
 
 "use strict";
 
@@ -23,51 +23,21 @@ function Vortex(){
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Magnetic Vortex", {size:70, leading:50});
   this.addActor(this.title);
 
-    /////////////////////////////// BUTTONS /////////////////////////////////
+    /////////////////////////////// BUTTON AND SLIDER /////////////////////////////////
   
-  /*//This button speeds up the vortex
-  var fastSpeedValue;
-  this.speedUp = new TextButton(
+  this.demo = new TextButton(
                                     windowWidth*0.2 - 100, // x position
 									windowHeight*0.3 - 50, // y position
 									200, // width of button
 									100, // height of button
 									BLUE, // color of button
-									"Speed Up!", // text on button
+									"demo", // text on button
 									attrs, // text attributes
-									this.speedUpAction.bind(this), // action to call
+									this.demoAction.bind(this), // action to call
 									'rect'); // shape
-  this.addActor(this.speedUp); // Adds button "actor" to the scene
+  this.addActor(this.demo); // Adds button "actor" to the scene
+}
   
-  //This button slows down the vortex
-  var slowSpeedValue;
-  this.slowDown = new TextButton(
-                                    windowWidth*0.2 - 100, // x position
-									windowHeight*0.3 - 50, // y position
-									200, // width of button
-									100, // height of button
-									BLUE, // color of button
-									"Speed Up!", // text on button
-									attrs, // text attributes
-									this.slowDownAction.bind(this), // action to call
-									'rect'); // shape
-  this.addActor(this.slowDown); // Adds button "actor" to the scene
-
-  
-  //This button restarts the vortex
-  var restartValue
-  this.restart = new TextButton(
-                                    windowWidth*0.2 - 100, // x position
-									windowHeight*0.3 - 50, // y position
-									200, // width of button
-									100, // height of button
-									BLUE, // color of button
-									"Speed Up!", // text on button
-									attrs, // text attributes
-									this.restartAction.bind(this), // action to call
-									'rect'); // shape
-  this.addActor(this.restart); // Adds button "actor" to the scene*/
-
   //slide to control speed
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.26, // x position
@@ -80,6 +50,7 @@ function Vortex(){
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
   
+  //slide label
   this.fixedSlideLabel = new Label(
                        windowWidth*0.5, // x position
                        windowHeight*0.42, // y position
@@ -98,22 +69,9 @@ Vortex.prototype.setup = function(){
   manager.changeState(STATE_MAGNETICVORTEX);
 }
 
-Vortex.prototype.speedUpAction = function() {
-  console.log ("Speed Up Action");
-  //No clue if this works
-  MAGNETICVORTEX.master.values(DCMotorSpeed = fastSpeedValue);
-}
-
-Vortex.prototype.slowDownAction = function() {
-  console.log ("Slow Down Action");
-  //No clue if this works
-  MAGNETICVORTEX.master.values(DCMotorSpeed = slowSpeedValue);
-}
-
-Vortex.prototype.restartAction = function() {
-  console.log ("restart Action");
-  //No clue if this works
-  MAGNETICVORTEX.master.values(DCMotorSpeed = restartValue);
+Vortex.prototype.demoAction = function() {
+  console.log ("Demo button");
+  MAGNETICVORTEX.master.events.demo;
 }
 
 Vortex.prototype.fixedChangePosition = function(slidePosition) {

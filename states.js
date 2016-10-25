@@ -72,6 +72,7 @@ var MAGNETICVORTEX = {
     },
     events: {
       pistonStop: function pistonStop() { manager.sendEvent(0, 3); }
+      demo: function demo() {manager.sendEvent(1, 3);}
     }
   },
   tablet: {
