@@ -1,7 +1,8 @@
 //Scene: SpeedometerPage1
-//NOT FINISHED - NEEDS EDITING/RENAMING
+//NOT FINISHED - NEEDS EDITING
+//What exactly are we going to have this scene do? -Anna
 
-"use strict";
+/*"use strict";
 
 function SpeedometerPage1(){
 
@@ -37,7 +38,7 @@ function SpeedometerPage1(){
 									         this.demoAction.bind(this), // action to call
 									         'rect'); // shape
   this.addActor(this.demo); // Adds button "actor" to the scene
-}
+
 
   var fastSpeedValue;
   this.demo = new TextButton(
@@ -59,31 +60,30 @@ _inherits(SpeedometerPage1, Scene);
 
 SpeedometerPage1.prototype.setup = function(){
   console.log("Changed state to MAGNETICVORTEX");
-  manager.changeState(STATE_MAGNETICVORTEX);
+  //manager.changeState(STATE_MAGNETICVORTEX);
 }
 
 //demo button action
 SpeedometerPage1.prototype.demoAction = function() {
   console.log ("Demo button");
-  MAGNETICVORTEX.master.events.demo;
+  //MAGNETICVORTEX.master.events.demo;
 }
 
 //update slider position
 SpeedometerPage1.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
-  manager.change(MAGNETICVORTEX.master.values.DCMotorSpeed, slidePosition);
+  //manager.change(MAGNETICVORTEX.master.values.DCMotorSpeed, slidePosition);
   //console.log("Curret value of the variable is " + PERPETUALBALLEVENT.master.values.railPosition);
 }
 
 SpeedometerPage1.prototype.finishedAction = function() {
   stage.resume();
 }
+*/
 
-//Scene: FishyTank - edited by Chloe
-//NOT FINISHED - NEEDS EDITING/RENAMING
-//Hey what is this? -Anna
+//FishyTank - edited by Chloe
 
-/*"use strict";
+"use strict";
 
 function SpeedometerPage1()
 {
@@ -120,6 +120,7 @@ function SpeedometerPage1()
   
   //This button plays the demo
   
+}
 
 _inherits(SpeedometerPage1, Scene);
 
@@ -138,17 +139,17 @@ SpeedometerPage1.prototype.speedometerFunction = function(angle){
   
   //this should send a speed to the motor to tell it how fast to go
   //no value needs to be retuned
-};
+}
 
 SpeedometerPage1.prototype.runCommand = function(){
   this.speedometer.displayAngle = this.speedometerMinAngle;
   console.log("next button clicked on speedometer page");
-};
+}
 
 SpeedometerPage1.prototype.demoAction = function(){
   console.log("ran demo");
   manager.changeState(STATE_FISHYTANK);
-  FISHYTANK.master.events.spinTank();
+  FISHYTANK.master.events.spinTank;
   
 }
-*/
+

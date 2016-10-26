@@ -1,4 +1,6 @@
 //Scene: SwishyBoats created by Anna
+//what can we do with the boats?? - Right now it's just start and stop buttons
+//need an event to stop the boats, I don't think that's a thing right now
 
 "use strict";
 
@@ -8,7 +10,7 @@ function SwishyBoats(){
 	
   Scene.call(this);
   
-  attrs = {size:25, leading:25};
+  attrs = {size:35, leading:25};
   
   //Setting maximum variables
   this.maxDistance = 200;
@@ -19,19 +21,19 @@ function SwishyBoats(){
   this.homeButton = new HomeButton(homeAction);
   this.addActor(this.homeButton);
   
-  this.title = new Label(windowWidth/2, windowHeight*0.16, "SwishyBoats", {size:70, leading:50});
+  this.title = new Label(windowWidth/2, windowHeight*0.16, "Swishy Boats", {size:70, leading:50});
   this.addActor(this.title);
 
     /////////////////////////////// BUTTONS /////////////////////////////////
   
   //This button runs the boats
   this.runBoats = new TextButton(
-                                    windowWidth*0.2 - 100, // x position
-									windowHeight*0.3 - 50, // y position
-									200, // width of button
-									100, // height of button
-									BLUE, // color of button
-									"Speed Up!", // text on button
+                                    windowWidth*0.3 - 100, // x position
+									windowHeight*0.5 - 50, // y position
+									400, // width of button
+									120, // height of button
+									YELLOW, // color of button
+									"Run Boats", // text on button
 									attrs, // text attributes
 									this.runBoatsAction.bind(this), // action to call
 									'rect'); // shape
@@ -39,12 +41,12 @@ function SwishyBoats(){
   
   //This button stops the boats
   this.stopBoats = new TextButton(
-                                    windowWidth*0.2 - 100, // x position
-									windowHeight*0.3 - 50, // y position
-									200, // width of button
-									100, // height of button
+                                    windowWidth*0.6 - 100, // x position
+									windowHeight*0.5 - 50, // y position
+									400, // width of button
+									120, // height of button
 									RED, // color of button
-									"Speed Up!", // text on button
+									"Stop Boats", // text on button
 									attrs, // text attributes
 									this.stopBoatsAction.bind(this), // action to call
 									'rect'); // shape
@@ -64,12 +66,11 @@ SwishyBoats.prototype.setup = function(){
 
 SwishyBoats.prototype.runBoatsAction = function() {
   console.log ("run boats");
-  //IDK what the difference between demo and cycleBall is
+  //IDK what the demo does for the boats
   SWISHYBOATS.master.events.cycleBall();
 }
 
 SwishyBoats.prototype.stopBoatsAction = function() {
   console.log ("stop boats");
-  //IDK what cycleEntranceStop or cycleExitStop does
-  //SWISHYBOATS.master.events.cycleExitStop();
+  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
 }
