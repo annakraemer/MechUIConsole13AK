@@ -1,5 +1,5 @@
 //Scene: SwishyBoats created by Anna
-//what can we do with the boats?? - Right now it's just start and stop buttons
+//what can we do with the boats??
 //need an event to stop the boats, I don't think that's a thing right now
 
 "use strict";
@@ -125,13 +125,13 @@ SwishyBoats.prototype.setup = function(){
 
 SwishyBoats.prototype.demoAction = function() {
   console.log ("run boats");
-  //IDK what the demo does for the boats
-  SWISHYBOATS.master.events.cycleBall();
+  SWISHYBOATS.master.events.demo();
 }
 
 SwishyBoats.prototype.firstBoatAction = function() {
   console.log ("first boat");
-  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+  SWISHYBOATS.master.events.firstBoat();
+  //DO NOT IMPLEMENT THE EVENT IS NOT WORKING
 }
 
 SwishyBoats.prototype.secondBoatAction = function() {

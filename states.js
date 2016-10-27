@@ -89,7 +89,8 @@ var SPINNYLIFTER = {
   id: 4,
   master: {
     values: {
-      spinnyOffset1: new HardwareValue(4, 0, Manager.TYPE_INT16)
+      spinnyOffset1: new HardwareValue(4, 0, Manager.TYPE_INT16),
+      topSensor: new HardwareValue(4, 1, Manager.TYPE_UINT16)
     },
     events: {
       demo: function demo() { manager.sendEvent(0, 4); },
@@ -163,7 +164,8 @@ var SWISHYBOATS = {
       demo: function demo() { manager.sendEvent(0, 7); },
       cycleEntranceStop: function cycleEntranceStop() { manager.sendEvent(1, 7); },
       cycleExitStop: function cycleExitStop() { manager.sendEvent(2, 7); },
-      cycleBall: function cycleBall() { manager.sendEvent(3, 7); }
+      cycleBall: function cycleBall() { manager.sendEvent(3, 7); },
+      firstBoat: function firstBoat() { manager.sendEvent(4, 7); }
     }
   },
   tablet: {
