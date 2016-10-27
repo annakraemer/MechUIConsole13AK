@@ -26,6 +26,7 @@ function Vortex(){
     /////////////////////////////// BUTTON AND SLIDER /////////////////////////////////
   
   //demo button
+  //PUT IN PICTURE FOR BUTTON
   this.demo = new TextButton(
                            windowWidth*0.475 - 100, // x position
 									         windowHeight*0.8 - 50, // y position

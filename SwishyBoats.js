@@ -27,7 +27,7 @@ function SwishyBoats(){
     /////////////////////////////// BUTTONS /////////////////////////////////
   
   //This button runs the boats
-  this.runBoats = new TextButton(
+  /*this.runBoats = new TextButton(
                                     windowWidth*0.3 - 100, // x position
 									windowHeight*0.5 - 50, // y position
 									400, // width of button
@@ -50,9 +50,68 @@ function SwishyBoats(){
 									attrs, // text attributes
 									this.stopBoatsAction.bind(this), // action to call
 									'rect'); // shape
-  this.addActor(this.stopBoats); // Adds button "actor" to the scene
+  this.addActor(this.stopBoats); // Adds button "actor" to the scene*/
 
+  //PUT IN PICTURE FOR BUTTON
+  this.demo = new TextButton(
+                           windowWidth*0.2 - 100, // x position
+									         windowHeight*0.5 - 50, // y position
+									         350, // width of button
+									         100, // height of button
+									         RED, // color of button
+									         "Demo", // text on button
+									         attrs, // text attributes
+									         this.demoAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.demo); // Adds button "actor" to the scene
+  
+  this.firstBoat = new TextButton(
+                           windowWidth*0.675 - 100, // x position
+									         windowHeight*0.3 - 50, // y position
+									         300, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Boat One", // text on button
+									         attrs, // text attributes
+									         this.firstBoatAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.firstBoat); // Adds button "actor" to the scene
+  
+  this.secondBoat = new TextButton(
+                           windowWidth*0.475 - 100, // x position
+									         windowHeight*0.45 - 50, // y position
+									         300, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Boat Two", // text on button
+									         attrs, // text attributes
+									         this.secondBoatAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.secondBoat); // Adds button "actor" to the scene
+  
+  this.thirdBoat = new TextButton(
+                           windowWidth*0.675 - 100, // x position
+									         windowHeight*0.6 - 50, // y position
+									         300, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Boat Three", // text on button
+									         attrs, // text attributes
+									         this.thirdBoatAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.thirdBoat); // Adds button "actor" to the scene
 
+  this.fourthBoat = new TextButton(
+                           windowWidth*0.475 - 100, // x position
+									         windowHeight*0.75 - 50, // y position
+									         300, // width of button
+									         100, // height of button
+									         BLUE, // color of button
+									         "Boat Four", // text on button
+									         attrs, // text attributes
+									         this.fourthBoatAction.bind(this), // action to call
+									         'rect'); // shape
+  this.addActor(this.fourthBoat); // Adds button "actor" to the scene
 }
 
 _inherits(SwishyBoats, Scene);
@@ -64,13 +123,28 @@ SwishyBoats.prototype.setup = function(){
   manager.changeState(STATE_SWISHYBOATS);
 }
 
-SwishyBoats.prototype.runBoatsAction = function() {
+SwishyBoats.prototype.demoAction = function() {
   console.log ("run boats");
   //IDK what the demo does for the boats
   SWISHYBOATS.master.events.cycleBall();
 }
 
-SwishyBoats.prototype.stopBoatsAction = function() {
-  console.log ("stop boats");
+SwishyBoats.prototype.firstBoatAction = function() {
+  console.log ("first boat");
+  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+}
+
+SwishyBoats.prototype.secondBoatAction = function() {
+  console.log ("second boat");
+  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+}
+
+SwishyBoats.prototype.thirdBoatAction = function() {
+  console.log ("third boat");
+  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+}
+
+SwishyBoats.prototype.fourthBoatAction = function() {
+  console.log ("fourth boat");
   //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
 }
