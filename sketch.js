@@ -3,11 +3,12 @@
 var homeButtonImage;
 var buttonSize;
 
-var logo;
+var logo, boat;
 
 function preload()
 {
   logo = loadImage("/libs/images/redcircle.png");
+  boat = loadImage("/libs/images/SwishyBoatButtonImage.png");
 }
 
 var stage = new Stage();

@@ -53,17 +53,17 @@ function SwishyBoats(){
   this.addActor(this.stopBoats); // Adds button "actor" to the scene*/
 
   //PUT IN PICTURE FOR BUTTON
-  this.demo = new TextButton(
+  this.demo = new ImageButton(
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.5 - 50, // y position
 									         350, // width of button
 									         100, // height of button
-									         RED, // color of button
-									         "Demo", // text on button
-									         attrs, // text attributes
+									         boat,
 									         this.demoAction.bind(this), // action to call
-									         'rect'); // shape
+									         null); // shape
   this.addActor(this.demo); // Adds button "actor" to the scene
+  
+  //function (x, y, w, h, img, action, imgShadow){}
   
   this.firstBoat = new TextButton(
                            windowWidth*0.675 - 100, // x position
