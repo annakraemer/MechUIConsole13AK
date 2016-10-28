@@ -3,12 +3,13 @@
 var homeButtonImage;
 var buttonSize;
 
-var logo, boat;
+var logo, rightBoat;
 
 function preload()
 {
   logo = loadImage("/libs/images/redcircle.png");
-  boat = loadImage("/libs/images/SwishyBoatButtonImage.png");
+  rightBoat = loadImage("/MechUIConsole13AK/rightBoat.png");
+  leftBoat = loadImage("/MechUIConsole13AK/leftBoat.png");
 }
 
 var stage = new Stage();

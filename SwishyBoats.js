@@ -1,6 +1,8 @@
 //Scene: SwishyBoats created by Anna
-//what can we do with the boats??
-//need an event to stop the boats, I don't think that's a thing right now
+//PROBLEMS: the demo event just keeps on repeating, no clue why. It's not hardware
+//the first boat is on an event that doesn't work, so don't click it
+//NEED: an event to stop the boats, I don't think that's a thing right now
+
 
 "use strict";
 
@@ -25,40 +27,14 @@ function SwishyBoats(){
   this.addActor(this.title);
 
     /////////////////////////////// BUTTONS /////////////////////////////////
-  
-  //This button runs the boats
-  /*this.runBoats = new TextButton(
-                                    windowWidth*0.3 - 100, // x position
-									windowHeight*0.5 - 50, // y position
-									400, // width of button
-									120, // height of button
-									YELLOW, // color of button
-									"Run Boats", // text on button
-									attrs, // text attributes
-									this.runBoatsAction.bind(this), // action to call
-									'rect'); // shape
-  this.addActor(this.runBoats); // Adds button "actor" to the scene
-  
-  //This button stops the boats
-  this.stopBoats = new TextButton(
-                                    windowWidth*0.6 - 100, // x position
-									windowHeight*0.5 - 50, // y position
-									400, // width of button
-									120, // height of button
-									RED, // color of button
-									"Stop Boats", // text on button
-									attrs, // text attributes
-									this.stopBoatsAction.bind(this), // action to call
-									'rect'); // shape
-  this.addActor(this.stopBoats); // Adds button "actor" to the scene*/
 
-  //PUT IN PICTURE FOR BUTTON
+  
   this.demo = new ImageButton(
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.5 - 50, // y position
 									         350, // width of button
 									         100, // height of button
-									         boat,
+									         rightBoat,
 									         this.demoAction.bind(this), // action to call
 									         null); // shape
   this.addActor(this.demo); // Adds button "actor" to the scene
@@ -131,7 +107,7 @@ SwishyBoats.prototype.demoAction = function() {
 SwishyBoats.prototype.firstBoatAction = function() {
   console.log ("first boat");
   SWISHYBOATS.master.events.firstBoat();
-  //DO NOT IMPLEMENT THE EVENT IS NOT WORKING
+  //DO NOT IMPLEMENT THIS EVENT IS NOT WORKING
 }
 
 SwishyBoats.prototype.secondBoatAction = function() {
