@@ -22,7 +22,8 @@ BCSketch,
 SpeedometerPage1,
 SpeedometerPage2,
 SwishyBoats,
-Vortex;
+Vortex,
+SpinnyLifter;
 
 function setup()
 {
@@ -73,6 +74,9 @@ function setup()
   Vortex = new Vortex();
   stage.addScene('Vortex', Vortex);
   
+  SpinnyLifter = new SpinnyLifter();
+  stage.addScene('SpinnyLifter', SpinnyLifter);
+  
   stage.transitionTo('ConsoleOpeningScene');
 
 }
@@ -111,6 +115,7 @@ function FishyTankAction(){
 
 function SpinnyLifterAction (){
   console.log("Spinny Lifter Action");
+  stage.transitionTo('SpinnyLifter');
   //SpinnyLifter2Action
 }
 

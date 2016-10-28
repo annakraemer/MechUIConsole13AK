@@ -1,6 +1,5 @@
 //Scene: SwishyBoats created by Anna
-//PROBLEMS: the demo event just keeps on repeating, no clue why. It's not hardware
-//the first boat is on an event that doesn't work, so don't click it
+//PROBLEMS: the first boat is on an event that doesn't work, so don't click it
 //NEED: an event to stop the boats, I don't think that's a thing right now
 
 
