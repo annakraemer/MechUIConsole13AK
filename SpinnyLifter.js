@@ -23,8 +23,8 @@ function SpinnyLifter(){
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Magnetic Vortex", {size:70, leading:50});
   this.addActor(this.title);
   
-  this.nextButton = new NextButton(this.runCommand.bind(this));
-  this.addActor(this.nextButton);
+  //this.nextButton = new NextButton(this.runCommand.bind(this));
+  //this.addActor(this.nextButton);
 
     /////////////////////////////// BUTTON AND SLIDER /////////////////////////////////
   
