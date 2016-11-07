@@ -166,7 +166,8 @@ var SWISHYBOATS = {
       cycleExitStop: function cycleExitStop() { manager.sendEvent(2, 7); },
       cycleBall: function cycleBall() { manager.sendEvent(3, 7); },
       firstBoat: function firstBoat() { manager.sendEvent(4, 7); },
-      lastBoat: function lastBoat() { manager.sendEvent(5, 7); }
+      lastBoat: function lastBoat() { manager.sendEvent(5, 7); },
+      stopBoats: function stopBoats() { manager.sendEvent(6, 7); }
     }
   },
   tablet: {
