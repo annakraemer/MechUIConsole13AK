@@ -1,6 +1,6 @@
 //Scene: SwishyBoats created by Anna
-//PROBLEMS: the first boat is on an event that doesn't work, so don't click it
-//NEED: an event to stop the boats, I don't think that's a thing right now
+//NEED: split into different scenes: demo versus manual, then one with manual sliders and one with the demos here
+//an event to stop the boats, I don't think that's a thing right now
 
 
 "use strict";
@@ -87,6 +87,26 @@ function SwishyBoats(){
 									         this.fourthBoatAction.bind(this), // action to call
 									         'rect'); // shape
   this.addActor(this.fourthBoat); // Adds button "actor" to the scene
+  
+   //slide to control speed
+  this.fixedPositionSlider =  new Slider(
+                           windowWidth*0.26, // x position
+                           windowHeight*0.5, // y position
+                           windowWidth*0.5, // size of slider
+                           0, // min value of slider
+                           100, // max value of slider
+                           0, // default value of slider
+                            this.fixedChangePosition.bind(this)); // action to call on slider change
+  this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
+  this.addActor(this.fixedPositionSlider); // adds slider to scene
+  
+  //slide label
+  this.fixedSlideLabel = new Label(
+                       windowWidth*0.5, // x position
+                       windowHeight*0.42, // y position
+                       "Boat 1 Position\n\n\nleft                                           right", // text
+                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
+  this.addActor(this.fixedSlideLabel); // adds text to scene
 }
 
 _inherits(SwishyBoats, Scene);
@@ -122,4 +142,10 @@ SwishyBoats.prototype.thirdBoatAction = function() {
 SwishyBoats.prototype.fourthBoatAction = function() {
   console.log ("fourth boat");
   //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+}
+
+//update slider position
+SwishyBoats.prototype.fixedChangePosition = function(slidePosition) {
+  console.log("Current value of slider is " + slidePosition);
+  manager.change(SWISHYBOATS.master.values.boat1Pos, slidePosition);
 }
