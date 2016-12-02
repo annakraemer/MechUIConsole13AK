@@ -1,4 +1,4 @@
-//Scene: SwishyBoats created by Anna
+//Scene: SwishyBoats created by Anna, Edited by Sophia
 //NEED: split into different scenes: demo versus manual, then one with manual sliders and one with the demos here
 //an event to stop the boats, I don't think that's a thing right now
 
@@ -88,7 +88,7 @@ function SwishyBoats(){
 									         'rect'); // shape
   this.addActor(this.fourthBoat); // Adds button "actor" to the scene
   
-   //slide to control speed
+ /*  //slide to control speed
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.26, // x position
                            windowHeight*0.5, // y position
@@ -106,7 +106,7 @@ function SwishyBoats(){
                        windowHeight*0.42, // y position
                        "Boat 1 Position\n\n\nleft                                           right", // text
                        {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
-  this.addActor(this.fixedSlideLabel); // adds text to scene
+  this.addActor(this.fixedSlideLabel); // adds text to scene*/
 }
 
 _inherits(SwishyBoats, Scene);
@@ -145,7 +145,7 @@ SwishyBoats.prototype.fourthBoatAction = function() {
 }
 
 //update slider position
-SwishyBoats.prototype.fixedChangePosition = function(slidePosition) {
+/* SwishyBoats.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
-  manager.change(SWISHYBOATS.master.values.boat1Pos, slidePosition);
+  manager.change(SWISHYBOATS.master.values.boat1Pos, slidePosition);*/
 }

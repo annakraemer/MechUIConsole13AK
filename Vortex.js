@@ -1,7 +1,8 @@
-//Scene: Vortex - edited by Chloe
+//Scene: Vortex - edited by Chloe, Edited by Sophia
 //FINISHED - NEEDS HW TESTING
 
 "use strict";
+
 
 function Vortex(){
 
@@ -45,7 +46,7 @@ function Vortex(){
                            windowHeight*0.5, // y position
                            windowWidth*0.5, // size of slider
                            0, // min value of slider
-                           100, // max value of slider
+                           50, // max value of slider
                            0, // default value of slider
                             this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object

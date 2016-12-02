@@ -22,6 +22,7 @@ BCSketch,
 SpeedometerPage1,
 SpeedometerPage2,
 SwishyBoats,
+SwishyBoats2,
 Vortex,
 SpinnyLifter;
 
@@ -71,6 +72,9 @@ function setup()
   SwishyBoats = new SwishyBoats();
   stage.addScene('SwishyBoats', SwishyBoats);
   
+  SwishyBoats2 = new SwishyBoats2();
+  stage.addScene('SwishyBoats2', SwishyBoats2);
+  
   Vortex = new Vortex();
   stage.addScene('Vortex', Vortex);
   
@@ -118,6 +122,12 @@ function SpinnyLifterAction (){
   stage.transitionTo('SpinnyLifter');
   //SpinnyLifter2Action
 }
+
+function SwishyBoatsAction(){
+  console.log("Swishy Boats Action");
+  stage.transitionTo('SwishyBoats');
+}
+
 
 function SwishyBoatsAction(){
   console.log("Swishy Boats Action");
