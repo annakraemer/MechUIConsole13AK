@@ -1,6 +1,5 @@
 //Scene: SwishyBoats created by Anna, Edited by Sophia
 //NEED: split into different scenes: demo versus manual, then one with manual sliders and one with the demos here
-//an event to stop the boats, I don't think that's a thing right now
 
 
 "use strict";
@@ -131,21 +130,20 @@ SwishyBoats.prototype.firstBoatAction = function() {
 
 SwishyBoats.prototype.secondBoatAction = function() {
   console.log ("second boat");
-  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+  //WE NEED TO IMPLEMENT ALLYSE'S VALUES
 }
 
 SwishyBoats.prototype.thirdBoatAction = function() {
   console.log ("third boat");
-  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+  //WE NEED TO IMPLEMENT ALLYSE'S VALUES
 }
 
 SwishyBoats.prototype.fourthBoatAction = function() {
   console.log ("fourth boat");
-  //WE DON'T HAVE AN EVENT FOR THIS WE SHOULD DO THAT
+  //WE NEED TO IMPLEMENT ALLYSE'S VALUES
 }
 
 //update slider position
 /* SwishyBoats.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(SWISHYBOATS.master.values.boat1Pos, slidePosition);*/
-}

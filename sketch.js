@@ -23,6 +23,7 @@ SpeedometerPage1,
 SpeedometerPage2,
 SwishyBoats,
 SwishyBoats2,
+SwishyBoatsMenuScene,
 Vortex,
 SpinnyLifter;
 
@@ -75,6 +76,9 @@ function setup()
   SwishyBoats2 = new SwishyBoats2();
   stage.addScene('SwishyBoats2', SwishyBoats2);
   
+  SwishyBoatsMenuScene = new SwishyBoatsMenuScene();
+  stage.addScene('SwishyBoatsMenuScene', SwishyBoatsMenuScene);
+  
   Vortex = new Vortex();
   stage.addScene('Vortex', Vortex);
   
@@ -125,13 +129,7 @@ function SpinnyLifterAction (){
 
 function SwishyBoatsAction(){
   console.log("Swishy Boats Action");
-  stage.transitionTo('SwishyBoats');
-}
-
-
-function SwishyBoatsAction(){
-  console.log("Swishy Boats Action");
-  stage.transitionTo('SwishyBoats');
+  stage.transitionTo('SwishyBoatsMenuScene');
 }
   
   function VortexAction(){

@@ -118,7 +118,8 @@ var SPINNYLIFTER2 = {
       demo: function demo() { manager.sendEvent(0, 5); },
       cycleBall: function cycleBall() { manager.sendEvent(1, 5); },
       cycleEntranceStop: function cycleEntranceStop() { manager.sendEvent(2, 5); },
-      cycleExitStop: function cycleExitStop() { manager.sendEvent(3, 5); }
+      cycleExitStop: function cycleExitStop() { manager.sendEvent(3, 5); },
+      stopMovement: function stopMovement() { manager.sendEvent(4, 5); }
     }
   },
   tablet: {
@@ -167,7 +168,9 @@ var SWISHYBOATS = {
       cycleBall: function cycleBall() { manager.sendEvent(3, 7); },
       firstBoat: function firstBoat() { manager.sendEvent(4, 7); },
       lastBoat: function lastBoat() { manager.sendEvent(5, 7); },
-      stopBoats: function stopBoats() { manager.sendEvent(6, 7); }
+      stopBoats: function stopBoats() { manager.sendEvent(6, 7); },
+      entranceStopOn: function entranceStopOn() { manager.sendEvent(7, 7); },
+      entranceStopOff: function entranceStopOff() { manager.sendEvent(8, 7); }
     }
   },
   tablet: {
