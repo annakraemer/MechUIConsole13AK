@@ -25,7 +25,8 @@ SwishyBoats,
 SwishyBoats2,
 SwishyBoatsMenuScene,
 Vortex,
-SpinnyLifter;
+SpinnyLifter
+CycleBallMenuScene;
 
 function setup()
 {
@@ -84,6 +85,9 @@ function setup()
   
   SpinnyLifter = new SpinnyLifter();
   stage.addScene('SpinnyLifter', SpinnyLifter);
+  
+  CycleBallMenuScene = new CycleBallMenuScene();
+  stage.addScene('CycleBallMenuScene', CycleBallMenuScene);
   
   stage.transitionTo('ConsoleOpeningScene');
 
