@@ -20,7 +20,7 @@ function SpinnyLifter(){
   this.homeButton = new HomeButton(homeAction);
   this.addActor(this.homeButton);
   
-  this.title = new Label(windowWidth/2, windowHeight*0.16, "Magnetic Vortex", {size:70, leading:50});
+  this.title = new Label(windowWidth/2, windowHeight*0.16, "Spinny Lifter", {size:70, leading:50});
   this.addActor(this.title);
   
   //this.nextButton = new NextButton(this.runCommand.bind(this));
