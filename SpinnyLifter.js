@@ -76,7 +76,7 @@ SpinnyLifter.prototype.setup = function(){
 //demo button action
 SpinnyLifter.prototype.demo1Action = function() {
   console.log ("Demo button");
-  SPINNYLIFTER.master.events.cycleBall;
+  SPINNYLIFTER.master.events.cycleBall();
 }
 
 //update slider position

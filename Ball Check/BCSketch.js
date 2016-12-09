@@ -4,7 +4,7 @@
 
 "use strict";
 var BCScene, errorScene;
-var ballSensorArr, noBallChecked1, noBallChecked2;
+var ballSensorArr, noBallChecked1, noBallChecked2, noBallChecked3;
 var nextScene, nextState, previousTimeout;
 var desiredLoc, lastLoc;
 var checkingEnabled, checkBallCalled;
@@ -45,7 +45,7 @@ function BCSketch(managerName, stageName)
   
   this.errorScene = new ErrorScene('ErrorScene', "Error!", null);
   stage.addScene('ErrorScene', this.errorScene);
-/*
+
   this.managerName.setEventHandler(BALLCHECK.tablet.events.resume, this.resumeAction.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.checkBallDone, this.moveBall.bind(this)); 
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib1Ready, this.amib1ReadyState.bind(this));
@@ -54,7 +54,7 @@ function BCSketch(managerName, stageName)
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib1NotReady, this.amib1NotReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib2NotReady, this.amib2NotReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib3NotReady, this.amib3NotReadyState.bind(this));
-  */
+  
 }
 _inherits(BCSketch, Scene);
 
@@ -66,7 +66,11 @@ BCSketch.prototype.checkBall = function() {
   desiredLoc = arguments[0];
   nextScene = arguments[1];
   nextState = arguments[2];
-  displayMessage = arguments[3];  
+  displayMessage = arguments[3]; 
+
+  previousTimeout = stage.activeScene.timeoutTime;
+  stage.activeScene.timeoutTime = 200000;
+  stage.activeScene.resetTimeout();    
     
   if(!this.checkingEnabled) {
     BCSketch.finished();
@@ -81,6 +85,7 @@ BCSketch.prototype.checkBall = function() {
   
   console.log("check ball");
   this.checkBallCalled = true;
+  
   this.managerName.forceChangeState(STATE_BALLCHECK);
 
   previousTimeout = this.stageName.activeScene.timeoutTime;
@@ -221,8 +226,8 @@ BCSketch.prototype.ballLoc3Cycle = function() {
 
 BCSketch.prototype.ballLoc4Cycle = function() {
   console.log("cycling ballLoc4");
-  this.managerName.forceChangeState(STATE_SPINNYLIFTER2);
-  SPINNYLIFTER2.master.events.cycleExitStop();
+  this.managerName.forceChangeState(STATE_MAGNETICVORTEX);
+  MAGNETICVORTEX.master.events.cycleBall();
 }
 
 BCSketch.prototype.resumeAction = function() {

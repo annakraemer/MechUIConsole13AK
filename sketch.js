@@ -12,6 +12,8 @@ function preload()
   leftBoat = loadImage("/MechUIConsole13AK/leftBoat.png");
 }
 
+MASTER = true;
+
 var stage = new Stage();
 var manager;
 var STATE_IDLE = 0;

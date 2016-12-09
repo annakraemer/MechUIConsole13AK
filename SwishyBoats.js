@@ -119,12 +119,12 @@ SwishyBoats.prototype.setup = function(){
 
 SwishyBoats.prototype.demoAction = function() {
   console.log ("run boats");
-  SWISHYBOATS.master.events.demo();
+  SWISHYBOATS.master.events.cycleBall();
 }
 
 SwishyBoats.prototype.firstBoatAction = function() {
   console.log ("first boat");
-  SWISHYBOATS.master.events.firstBoat();
+  //SWISHYBOATS.master.events.firstBoat();
   //DO NOT IMPLEMENT THIS EVENT IS NOT WORKING
 }
 
