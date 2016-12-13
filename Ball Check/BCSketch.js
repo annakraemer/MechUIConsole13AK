@@ -14,6 +14,8 @@ var amibs, amibReadyArr;
 var managerStates;
 var managerName, stageName;
 
+var timeoutValue = 1000;
+
 //CONSIDER REWRITING THIS TO SPLIT IT INTO TWO FILES: THE CUSTOMIZED CODE AND THE LIBRARY CODE
 function BCSketch(managerName, stageName)
 {
@@ -69,7 +71,7 @@ BCSketch.prototype.checkBall = function() {
   displayMessage = arguments[3]; 
 
   previousTimeout = stage.activeScene.timeoutTime;
-  stage.activeScene.timeoutTime = 200000;
+  stage.activeScene.timeoutTime = timeoutValue;
   stage.activeScene.resetTimeout();    
     
   if(!this.checkingEnabled) {
@@ -89,7 +91,7 @@ BCSketch.prototype.checkBall = function() {
   this.managerName.forceChangeState(STATE_BALLCHECK);
 
   previousTimeout = this.stageName.activeScene.timeoutTime;
-  this.stageName.activeScene.timeoutTime = 200000;
+  this.stageName.activeScene.timeoutTime = timeoutValue;
   this.stageName.activeScene.resetTimeout();
   console.log("leaving checkBall");
 }
@@ -196,7 +198,7 @@ BCSketch.prototype.waitForBall = function() {
   this.managerName.forceChangeState(STATE_BALLCHECK);
   
   previousTimeout = this.stageName.activeScene.timeoutTime;
-  this.stageName.activeScene.timeoutTime = 200000;
+  this.stageName.activeScene.timeoutTime = timeoutValue;
   this.stageName.activeScene.resetTimeout();
   
   desiredLoc = arguments[0];
