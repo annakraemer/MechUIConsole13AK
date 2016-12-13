@@ -91,6 +91,7 @@ BCSketch.prototype.checkBall = function() {
   previousTimeout = this.stageName.activeScene.timeoutTime;
   this.stageName.activeScene.timeoutTime = 200000;
   this.stageName.activeScene.resetTimeout();
+  console.log("leaving checkBall");
 }
 
 /*
