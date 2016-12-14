@@ -160,6 +160,8 @@ BCSketch.prototype.moveBall = function() {
       BCSketch.noBall2();
     else if(this.lastLoc == 3)
       BCSketch.noBall3();
+    else if(this.lastLoc == 4)
+      BCSketch.noBall4();
     else
       BCSketch.noBall();
     return;
@@ -168,6 +170,7 @@ BCSketch.prototype.moveBall = function() {
   this.noBallChecked1 = false;
   this.noBallChecked2 = false;
   this.noBallChecked3 = false;
+  this.noBallChecked4 = false;
   
   //check for ball at desiredLoc
   console.log("checking desired location: " + desiredLoc);
@@ -277,7 +280,7 @@ BCSketch.prototype.noBall = function() {
 BCSketch.prototype.noBall2 = function() {
   if(!this.noBallChecked2) {
     this.noBallChecked2 = true;
-    this.stageName.pause("No Ball: Cycling First Location");
+    this.stageName.pause("No Ball: Cycling Second Location");
     
     //could be stuck in swishy boats
     BCSketch.ballLoc2Cycle();
@@ -292,9 +295,9 @@ BCSketch.prototype.noBall2 = function() {
 BCSketch.prototype.noBall3 = function() {
   if(!this.noBallChecked3) {
     this.noBallChecked3 = true;
-    this.stageName.pause("No Ball: Cycling Second Location");
+    this.stageName.pause("No Ball: Cycling Third Location");
     
-    //could be satuck in spinnylifter 2
+    //could be stuck in spinnylifter 2
     BCSketch.ballLoc3Cycle();
 
     BCSketch.resumeAction();
@@ -307,9 +310,8 @@ BCSketch.prototype.noBall3 = function() {
 BCSketch.prototype.noBall4 = function() {
   if(!this.noBallChecked4) {
     this.noBallChecked4 = true;
-    this.stageName.pause("No Ball: Cycling Second Location");
+    this.stageName.pause("No Ball: Cycling Fourth Location");
     
-    //could be satuck in spinnylifter 2
     BCSketch.ballLoc4Cycle();
 
     BCSketch.resumeAction();
