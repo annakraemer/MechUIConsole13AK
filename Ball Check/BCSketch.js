@@ -4,7 +4,7 @@
 
 "use strict";
 var BCScene, errorScene;
-var ballSensorArr, noBallChecked1, noBallChecked2, noBallChecked3;
+var ballSensorArr, noBallChecked1, noBallChecked2, noBallChecked3, noBallChecked4;
 var nextScene, nextState, previousTimeout;
 var desiredLoc, lastLoc;
 var checkingEnabled, checkBallCalled;
@@ -39,6 +39,7 @@ function BCSketch(managerName, stageName)
   this.noBallChecked1 = false;
   this.noBallChecked2 = false;
   this.noBallChecked3 = false;
+  this.noBallChecked4 = false;
   
   //makes sure checkBall was called and not just change state
   this.checkBallCalled = false;
@@ -298,7 +299,22 @@ BCSketch.prototype.noBall3 = function() {
 
     BCSketch.resumeAction();
   }
+  
   else {
+    BCSketch.noBall4();
+  }
+}
+BCSketch.prototype.noBall4 = function() {
+  if(!this.noBallChecked4) {
+    this.noBallChecked4 = true;
+    this.stageName.pause("No Ball: Cycling Second Location");
+    
+    //could be satuck in spinnylifter 2
+    BCSketch.ballLoc4Cycle();
+
+    BCSketch.resumeAction();
+  }
+  else{
     this.stageName.resume();
     this.errorScene.addErrorMessage("Ball off Track");
     this.stageName.transitionTo('ErrorScene');
@@ -306,6 +322,7 @@ BCSketch.prototype.noBall3 = function() {
     this.noBallChecked1 = false;
     this.noBallChecked2 = false;
     this.noBallChecked3 = false;
+    this.noBallChecked4 = false;
   }
 }
 
