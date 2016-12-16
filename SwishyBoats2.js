@@ -25,7 +25,7 @@ function SwishyBoats2(){
   //////////////////////////// Slider Implementation ///////////////////////
 
   
- //slide to control speed
+ //slide to control speed - still am working on finding the correct dimensions for each of the sliders
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.18, // x position
                            windowHeight*0.25, // y position
@@ -35,9 +35,9 @@ function SwishyBoats2(){
                            0, // default value of slider
                            this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
-  this.addActor(this.fixedPositionSlider); // adds slider to scene
+  this.addActor(this.fixedPositionSlider); // adds slider to scene, need to figure out how to input the images of the boats into the scene 
   
-  //slide label
+  //slider label for Boat 1 position
   this.fixedSlideLabel = new Label(
                        windowWidth*0.25, // x position
                        windowHeight*0.42, // y position
@@ -57,7 +57,7 @@ function SwishyBoats2(){
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
   
-  //slide label
+  //slider label for Boat 2 position
   this.fixedSlideLabel = new Label(
                        windowWidth*0.5, // x position
                        windowHeight*0.42, // y position
@@ -77,7 +77,7 @@ function SwishyBoats2(){
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
   
-  //slide label
+  //slider label for Boat 3 position 
   this.fixedSlideLabel = new Label(
                        windowWidth*0.5, // x position
                        windowHeight*0.42, // y position
@@ -96,9 +96,8 @@ function SwishyBoats2(){
                            this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
-  
-  //slide label
-  this.fixedSlideLabel = new Label(
+ 
+   this.fixedSlideLabel = new Label(
                        windowWidth*0.5, // x position
                        windowHeight*0.42, // y position
                        "Boat 4 Position\n\n\nleft                                           right", // text

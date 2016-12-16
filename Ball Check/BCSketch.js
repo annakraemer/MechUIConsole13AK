@@ -39,7 +39,7 @@ function BCSketch(managerName, stageName)
   this.noBallChecked1 = false;
   this.noBallChecked2 = false;
   this.noBallChecked3 = false;
-  this.noBallChecked4 = false;
+  this.noBallChecked4 = false; // added new noBallChecked variable for every location
   
   //makes sure checkBall was called and not just change state
   this.checkBallCalled = false;
