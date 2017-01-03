@@ -1,6 +1,4 @@
-//Only some of this file requires any editing to make it work for your console
-//With this you need the .cpp files for each AMIB and a new BALLCHECK state in your Console.comm file
-// "*****Stuff surrounded by five stars require editing*****"
+//BCSketch, UI
 
 "use strict";
 var BCScene, errorScene;
@@ -14,7 +12,7 @@ var amibs, amibReadyArr;
 var managerStates;
 var managerName, stageName;
 
-var timeoutValue = 1000;
+var timeoutValue = 10000;
 
 //CONSIDER REWRITING THIS TO SPLIT IT INTO TWO FILES: THE CUSTOMIZED CODE AND THE LIBRARY CODE
 function BCSketch(managerName, stageName)

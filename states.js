@@ -73,7 +73,10 @@ var MAGNETICVORTEX = {
     events: {
       pistonStop: function pistonStop() { manager.sendEvent(0, 3); },
       demo: function demo() { manager.sendEvent(1, 3); },
-      cycleBall: function cycleBall() { manager.sendEvent(2, 3); }
+      cycleBall: function cycleBall() { manager.sendEvent(2, 3); },
+      startSensor: function startSensor() { manager.sendEvent(3, 3); },
+      lowPiston: function lowPiston() { manager.sendEvent(4, 3); },
+      highPiston: function highPiston() { manager.sendEvent(5, 3); }
     }
   },
   tablet: {
