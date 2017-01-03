@@ -100,6 +100,8 @@ BCSketch.prototype.checkBall = function() {
 /*
 * This will get the sensors status
 */
+
+//this isn't working
 BCSketch.prototype.checkSensors = function() {
   if(this.checkBallCalled) {
     if(this.checkingEnabled) {
@@ -110,6 +112,7 @@ BCSketch.prototype.checkSensors = function() {
       else this.stageName.pause("Checking for Ball");
     
       BALLCHECK.master.events.checkSensors();
+      console.log("checked sensors");
     }
     else {
       BCSketch.finished();
