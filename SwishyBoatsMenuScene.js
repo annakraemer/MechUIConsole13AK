@@ -1,4 +1,4 @@
-//Scene: SwishyBoatsMenuScene created by Anna
+//Scene: SwishyBoatsMenuScene created by Anna and Sophia 
 //demo versus manual
 
 "use strict";
@@ -25,8 +25,8 @@ function SwishyBoatsMenuScene() {
 
     /////////////////////////////// BUTTONS /////////////////////////////////
 
-  
-  this.demo = new TextButton(
+  // creating new buttons for demo and manual scene for user to choose between which scene to go to
+  this.demo = new TextButton( 
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.5 - 50, // y position
 									         500, // width of button
@@ -59,7 +59,7 @@ _inherits(SwishyBoatsMenuScene, Scene);
 
   ///////////////////////////////// BUTTON SUB FUNCTIONS //////////////////////////////////
 
-SwishyBoatsMenuScene.prototype.setup = function(){
+SwishyBoatsMenuScene.prototype.setup = function(){ //telling the User INterface to change the states
   console.log("Changed state to SWISHYBOATS");
   manager.changeState(STATE_SWISHYBOATS);
 }
