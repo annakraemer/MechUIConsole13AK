@@ -1,6 +1,7 @@
 //BCSketch, UI
 
 "use strict";
+//calling all of the other scenes and the functions
 var BCScene, errorScene;
 var ballSensorArr, noBallChecked1, noBallChecked2, noBallChecked3, noBallChecked4;
 var nextScene, nextState, previousTimeout;
@@ -12,9 +13,10 @@ var amibs, amibReadyArr;
 var managerStates;
 var managerName, stageName;
 
-var timeoutValue = 10000;
+//timeout between cycles
+var timeoutValue = 100000;
 
-//CONSIDER REWRITING THIS TO SPLIT IT INTO TWO FILES: THE CUSTOMIZED CODE AND THE LIBRARY CODE
+//CONSIDER REWRITING THIS TO SPLIT IT INTO TWO FILES: THE CUSTOMIZED CODE AND THE LIBRARY CODE //IDK what this comment is
 function BCSketch(managerName, stageName)
 {
   console.log("created BCSketch");
@@ -192,6 +194,7 @@ BCSketch.prototype.moveBall = function() {
   else if(ballSensorArr[3])
     BCSketch.ballLoc4Cycle();
 
+  console.log("DONE MOVE BALL")
   setTimeout(function() {
     BCSketch.waitForBall(desiredLoc, nextScene, nextState, displayMessage);
   }, 2000);
@@ -214,24 +217,28 @@ BCSketch.prototype.waitForBall = function() {
   BALLCHECK.master.events.waitForBall();
 }
 
+//Location 1-2: spinnylifter1 to top of boats
 BCSketch.prototype.ballLoc1Cycle = function() {
   console.log("cycling ballLoc1");
   this.managerName.forceChangeState(STATE_SPINNYLIFTER);
   SPINNYLIFTER.master.events.cycleBall();
 }
 
+//Location 2-3: swishyboats to beginning of spinnylifter2
 BCSketch.prototype.ballLoc2Cycle = function() {
   console.log("cycling ballLoc2");
   this.managerName.forceChangeState(STATE_SWISHYBOATS);
   SWISHYBOATS.master.events.cycleBall();
 }
 
+//Location 3-4: spinnylifter2 to the ballstop
 BCSketch.prototype.ballLoc3Cycle = function() {
   console.log("cycling ballLoc3");
   this.managerName.forceChangeState(STATE_SPINNYLIFTER2);
   SPINNYLIFTER2.master.events.cycleBall();
 }
 
+//Location 4-1: piston stop stays down until back to beginning
 BCSketch.prototype.ballLoc4Cycle = function() {
   console.log("cycling ballLoc4");
   this.managerName.forceChangeState(STATE_MAGNETICVORTEX);
@@ -387,7 +394,7 @@ BCSketch.prototype.updateReadiness = function(amibNumber, readiness)
   if(readiness) readyText = " ready to check ball";
   else readyText = " not ready to check ball";
   
-  console.log(this.amibs[amibIndex] + readyText);
+  //console.log(this.amibs[amibIndex] + readyText);
   
   var readyToCheckSensors = true;
   for(var i = 0; i < this.amibReadyArr.length; i++) readyToCheckSensors = readyToCheckSensors & this.amibReadyArr[i];
