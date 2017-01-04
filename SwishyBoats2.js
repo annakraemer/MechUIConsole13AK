@@ -27,8 +27,8 @@ function SwishyBoats2(){
   
  //slide to control speed - still am working on finding the correct dimensions for each of the sliders
   this.fixedPositionSlider =  new Slider(
-                           windowWidth*0.18, // x position
-                           windowHeight*0.25, // y position
+                           windowWidth*0.2 - 100, // x position .18
+                           windowHeight*0.5 - 50, // y position
                            windowWidth*0.25, // size of slider
                            0, // min value of slider
                            100, // max value of slider

@@ -235,7 +235,7 @@ BCSketch.prototype.ballLoc3Cycle = function() {
 BCSketch.prototype.ballLoc4Cycle = function() {
   console.log("cycling ballLoc4");
   this.managerName.forceChangeState(STATE_MAGNETICVORTEX);
-  MAGNETICVORTEX.master.events.cycleBall();
+  MAGNETICVORTEX.master.events.startSensor();
 }
 
 BCSketch.prototype.resumeAction = function() {
