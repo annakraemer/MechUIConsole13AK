@@ -27,8 +27,8 @@ function SwishyBoats2(){
   
  //slide to control speed - still am working on finding the correct dimensions for each of the sliders
   this.fixedPositionSlider =  new Slider(
-                           windowWidth*0.2 - 100, // x position .18
-                           windowHeight*0.5 - 50, // y position
+                           windowWidth*0.675 - 100, // x position .18
+                           windowHeight*0.3 - 50, // y position
                            windowWidth*0.25, // size of slider
                            0, // min value of slider
                            100, // max value of slider
@@ -39,17 +39,17 @@ function SwishyBoats2(){
   
   //slider label for Boat 1 position
   this.fixedSlideLabel = new Label(
-                       windowWidth*0.25, // x position
-                       windowHeight*0.42, // y position
+                       windowWidth*.675 - 100, // x position .25
+                       windowHeight*0.3 - 50, // y position .42
                        "Boat 1 Position\n\n\nleft                       right", // text
-                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
+                       {size: windowWidth*0.03, leading: windowHeight*0.06}); // text attributes, windowWidth = 0.045, windowHeight = 0.09
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
   this.fixedPositionSlider =  new Slider(
-                           windowWidth*0.26, // x position
-                           windowHeight*0.5, // y position
-                           windowWidth*0.5, // size of slider
+                           windowWidth*0.475 - 100, // x position .26
+                           windowHeight*0.45 - 50, // y position .5
+                           windowWidth*0.25, // size of slider .5
                            0, // min value of slider
                            100, // max value of slider
                            0, // default value of slider
@@ -59,17 +59,17 @@ function SwishyBoats2(){
   
   //slider label for Boat 2 position
   this.fixedSlideLabel = new Label(
-                       windowWidth*0.5, // x position
-                       windowHeight*0.42, // y position
+                       windowWidth*0.475 - 100, // x position
+                       windowHeight*0.45 - 50, // y position
                        "Boat 2 Position\n\nleft                                           right", // text
                        {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
   this.fixedPositionSlider =  new Slider(
-                           windowWidth*0.26, // x position
-                           windowHeight*0.5, // y position
-                           windowWidth*0.5, // size of slider
+                           windowWidth*0.675 - 100, // x position
+                           windowHeight*0.6 - 50, // y position
+                           windowWidth*0.25, // size of slider
                            0, // min value of slider
                            100, // max value of slider
                            0, // default value of slider
@@ -79,17 +79,17 @@ function SwishyBoats2(){
   
   //slider label for Boat 3 position 
   this.fixedSlideLabel = new Label(
-                       windowWidth*0.5, // x position
-                       windowHeight*0.42, // y position
+                       windowWidth*0.675 - 100, // x position
+                       windowHeight*0.6 - 50, // y position
                        "Boat 3 Position\n\n\nleft                                           right", // text
                        {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
   this.fixedPositionSlider =  new Slider(
-                           windowWidth*0.26, // x position
-                           windowHeight*0.5, // y position
-                           windowWidth*0.5, // size of slider
+                           windowWidth*0.475 - 100, // x position
+                           windowHeight*0.75 - 50, // y position
+                           windowWidth*0.25, // size of slider
                            0, // min value of slider
                            100, // max value of slider
                            0, // default value of slider
@@ -98,8 +98,8 @@ function SwishyBoats2(){
   this.addActor(this.fixedPositionSlider); // adds slider to scene
  
    this.fixedSlideLabel = new Label(
-                       windowWidth*0.5, // x position
-                       windowHeight*0.42, // y position
+                       windowWidth*0.475 - 100, // x position
+                       windowHeight*0.75 - 50, // y position
                        "Boat 4 Position\n\n\nleft                                           right", // text
                        {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
