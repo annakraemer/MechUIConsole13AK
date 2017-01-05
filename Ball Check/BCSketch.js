@@ -14,7 +14,7 @@ var managerStates;
 var managerName, stageName;
 
 //timeout between cycles
-var timeoutValue = 100000;
+var timeoutValue = 600000;
 
 //CONSIDER REWRITING THIS TO SPLIT IT INTO TWO FILES: THE CUSTOMIZED CODE AND THE LIBRARY CODE //IDK what this comment is
 function BCSketch(managerName, stageName)
@@ -197,7 +197,7 @@ BCSketch.prototype.moveBall = function() {
   console.log("DONE MOVE BALL")
   setTimeout(function() {
     BCSketch.waitForBall(desiredLoc, nextScene, nextState, displayMessage);
-  }, 2000);
+  }, 20000); //?? 2000
 }
 
 //This will wait for the ball to move locations before taking action
