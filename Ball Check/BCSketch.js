@@ -150,13 +150,15 @@ BCSketch.prototype.moveBall = function() {
   }
   
   //check for no ball
-  console.log("checking for no ball");
-  var noBall = true;
-  for(var i = 0; i < ballSensorArr.length; i++) {
-    if(ballSensorArr[i])
-      noBall = false;
-  }
-  if(noBall) {
+  //console.log("checking for no ball");
+  //var noBall = true;
+  //for(var i = 0; i < ballSensorArr.length; i++) {
+    //if(ballSensorArr[i])
+      //noBall = false;
+  //}
+  //originally: if(noBall) {
+  if(numBalls == 0) {
+    console.log("no balls found");
     if(this.lastLoc == 1)
       BCSketch.noBall();
     else if(this.lastLoc == 2)
