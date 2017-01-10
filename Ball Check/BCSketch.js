@@ -199,7 +199,7 @@ BCSketch.prototype.moveBall = function() {
   console.log("DONE MOVE BALL")
   setTimeout(function() {
     BCSketch.waitForBall(desiredLoc, nextScene, nextState, displayMessage);
-  }, 20000); //?? 2000
+  }, 8000); //?? 2000
 }
 
 //This will wait for the ball to move locations before taking action
