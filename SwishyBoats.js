@@ -1,4 +1,4 @@
-//Scene: SwishyBoats created by Anna, Edited by Sophia
+//Scene: SwishyBoats created by Anna, Edited by Sophia and Allyse` 
 //NEED: split into different scenes: demo versus manual, then one with manual sliders and one with the demos here
 
 
@@ -24,10 +24,12 @@ function SwishyBoats(){
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Swishy Boats", {size:70, leading:50});
   this.addActor(this.title);
 
+   leftBoat = loadImage("/libs/images/leftBoat.png");
+
     /////////////////////////////// BUTTONS /////////////////////////////////
 
   
-  this.demo = new ImageButton(
+  this.demo = new ImageButton( //I dont know what I did here lol
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.5 - 50, // y position
 									         350, // width of button
