@@ -44,7 +44,7 @@ function SwishyBoats2(){
                        windowWidth*.675 - 100, // x position .25
                        windowHeight*0.3 - 60, // y position .42
                        "Boat 1 Position", // text
-                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes, windowWidth = 0.045, windowHeight = 0.09
+                       {size: windowWidth*0.035, leading: windowHeight*0.09}); // text attributes, windowWidth = 0.045, windowHeight = 0.09
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
@@ -64,7 +64,7 @@ function SwishyBoats2(){
                        windowWidth*0.475 - 100, // x position
                        windowHeight*0.45 - 70, // y position
                        "Boat 2 Position", // text
-                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
+                       {size: windowWidth*0.035, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
@@ -84,7 +84,7 @@ function SwishyBoats2(){
                        windowWidth*0.675 - 100, // x position
                        windowHeight*0.6 - 10, // y position
                        "Boat 3 Position", // text
-                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
+                       {size: windowWidth*0.035, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
@@ -103,7 +103,7 @@ function SwishyBoats2(){
                        windowWidth*0.475 - 100, // x position
                        windowHeight*0.85 - 50, // y position
                        "Boat 4 Position", // text
-                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
+                       {size: windowWidth*0.035, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
 }
 
