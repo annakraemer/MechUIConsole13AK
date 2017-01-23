@@ -1,5 +1,5 @@
 //sketch.js - ACTUAL, created by Anna K.
-
+//
 var homeButtonImage;
 var buttonSize;
 
@@ -49,8 +49,7 @@ function setup()
   //fix images here
   //var pickGameButtonImages = [loadImage("CUPPic.png"), loadImage("gyroPic.png"), loadImage("wheelPic.png"), loadImage("COAMPic.png")];
   var pickGameButtonActions = [FishyTankAction, SwishyBoatsAction, VortexAction, SpinnyLifterAction];
-  
-   menuScene = new ButtonsScene("Pick A Game", 
+ 
                                   null,
                                   pickGameButtonNames,
                                   pickGameButtonActions,
