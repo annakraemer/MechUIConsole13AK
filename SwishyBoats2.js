@@ -34,7 +34,7 @@ function SwishyBoats2(){
                            windowWidth*0.35, // size of slider
                            0, // min value of slider
                            100, // max value of slider
-                           50, // default value of slider
+                           100, // default value of slider
                            this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(rightBoat); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene, need to figure out how to input the images of the boats into the scene 
@@ -54,7 +54,7 @@ function SwishyBoats2(){
                            windowWidth*0.35, // size of slider .5
                            0, // min value of slider
                            100, // max value of slider
-                           50, // default value of slider
+                           100, // default value of slider
                            this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(leftBoat); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
@@ -74,7 +74,7 @@ function SwishyBoats2(){
                            windowWidth*0.35, // size of slider
                            0, // min value of slider
                            100, // max value of slider
-                           50, // default value of slider
+                           0, // default value of slider
                            this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(rightBoat); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
@@ -94,7 +94,7 @@ function SwishyBoats2(){
                            windowWidth*0.35, // size of slider
                            0, // min value of slider
                            100, // max value of slider
-                           50, // default value of slider
+                           100, // default value of slider
                            this.fixedChangePosition.bind(this)); // action to call on slider change
   this.fixedPositionSlider.sliderImage(leftBoat); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slide to scene

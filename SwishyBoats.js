@@ -126,6 +126,7 @@ SwishyBoats.prototype.demoAction = function() {
 
 SwishyBoats.prototype.firstBoatAction = function() {
   console.log ("first boat");
+  //SWISHYBOATS.master.values.boat1Pos();
   //SWISHYBOATS.master.events.firstBoat();
   //DO NOT IMPLEMENT THIS EVENT IS NOT WORKING
 }
