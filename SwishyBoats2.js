@@ -1,5 +1,5 @@
-//SwishyBoats2: Created by Sophia
-// Create generic menu button scene for SwishyBoats - manual and demo
+//SwishyBoats2: sliders to manually move the swishyboats
+
 "use strict";
 
 function SwishyBoats2(){
