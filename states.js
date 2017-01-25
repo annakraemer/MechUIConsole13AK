@@ -46,7 +46,7 @@ var FISHYTANK = {
   id: 2,
   master: {
     values: {
-      fishyStepperSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
+      fishyMotorSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
     },
     events: {
       spinTank: function spinTank() { manager.sendEvent(0, 2); }
