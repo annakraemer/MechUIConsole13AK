@@ -161,7 +161,7 @@ function SpeedometerPage1()
    //this.nextButton = new NextButton(this.runCommand.bind(this));
   
   this.addActor(this.speedometer);
-  this.addActor(this.nextButton);
+  //this.addActor(this.nextButton);
   this.addActor(this.title);
   this.addActor(this.background);
   this.addActor(this.homeButton);
