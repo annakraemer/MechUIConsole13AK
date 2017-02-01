@@ -150,7 +150,7 @@ function SpeedometerPage1()
   
   this.background = new BackgroundBorder();
   
-  this.speedometer = new Speedometer(this.speedometerXPos, this.speedometerYPos, this.speedometerWidth, this.speedometerWidth, this.speedometerFunction.bind(this), this.speedometerDeadZone, this.speedometerScalar, this.speedometerMinAngle, this.speedometerMaxAngle);
+  this.speedometer = new Speedometer(this.speedometerXPos, this.speedometerYPos, this.speedometerWidth, this.speedometerWidth, this.speedometerFunction, this.speedometerDeadZone, this.speedometerScalar, this.speedometerMinAngle, this.speedometerMaxAngle);
   this.speedometer.z = 10;
   
   this.homeButton = new HomeButton(homeAction);
@@ -158,7 +158,7 @@ function SpeedometerPage1()
   
   this.title = new Label(this.titleLabelXPos, this.titleLabelYPos, "Centripital Force", attrs);
   
-   this.nextButton = new NextButton(this.runCommand.bind(this));
+   //this.nextButton = new NextButton(this.runCommand.bind(this));
   
   this.addActor(this.speedometer);
   this.addActor(this.nextButton);
