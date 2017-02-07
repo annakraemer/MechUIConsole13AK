@@ -22,7 +22,6 @@ function SwishyBoats2(){
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Swishy Boats Manual", {size:70, leading:50});
   this.addActor(this.title);
   
-  leftBoat = loadImage("/libs/images/leftBoat.png");
   
   //////////////////////////// Slider Implementation ///////////////////////
 
@@ -45,7 +44,7 @@ function SwishyBoats2(){
                        windowWidth*.675 - 100, // x position .25
                        windowHeight*0.3 - 60, // y position .42
                        "Boat 1 Position", // text
-                       {size: windowWidth*0.035, leading: windowHeight*0.09}); // text attributes, windowWidth = 0.045, windowHeight = 0.09
+                       {size: windowWidth*0.03, leading: windowHeight*0.09}); // text attributes, windowWidth = 0.045, windowHeight = 0.09
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
    //slide to control speed
@@ -57,7 +56,7 @@ function SwishyBoats2(){
                            100, 
                            100, 
                            this.position2.bind(this)); 
-  this.slider2.sliderImage(leftBoat); 
+  this.slider2.sliderImage(leftBoat);
   this.addActor(this.slider2); 
   
   //slider label for Boat 2 position
@@ -65,7 +64,7 @@ function SwishyBoats2(){
                        windowWidth*0.475 - 100, 
                        windowHeight*0.45 - 70, 
                        "Boat 2 Position", 
-                       {size: windowWidth*0.035, leading: windowHeight*0.09}); 
+                       {size: windowWidth*0.03, leading: windowHeight*0.09}); 
   this.addActor(this.fixedSlideLabel); 
   
    //slide to control speed
@@ -85,7 +84,7 @@ function SwishyBoats2(){
                        windowWidth*0.675 - 100, 
                        windowHeight*0.6 - 10, 
                        "Boat 3 Position", 
-                       {size: windowWidth*0.035, leading: windowHeight*0.09}); 
+                       {size: windowWidth*0.03, leading: windowHeight*0.09}); 
   this.addActor(this.fixedSlideLabel); 
   
    //slide to control speed
@@ -104,7 +103,7 @@ function SwishyBoats2(){
                        windowWidth*0.475 - 100, 
                        windowHeight*0.85 - 50, 
                        "Boat 4 Position", 
-                       {size: windowWidth*0.035, leading: windowHeight*0.09}); 
+                       {size: windowWidth*0.03, leading: windowHeight*0.09}); 
   this.addActor(this.fixedSlideLabel); 
 }
 
