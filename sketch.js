@@ -27,6 +27,7 @@ SwishyBoats,
 SwishyBoats2,
 SwishyBoatsMenuScene,
 Vortex,
+VortexWheel,
 SpinnyLifter;
 
 function setup()
@@ -87,6 +88,9 @@ function setup()
   SpinnyLifter = new SpinnyLifter();
   stage.addScene('SpinnyLifter', SpinnyLifter);
   
+  SpinnyLifterCombo = new SpinnyLifterCombo();
+  stage.addScene('SpinnyLifterCombo', SpinnyLifterCombo);
+  
   stage.transitionTo('ConsoleOpeningScene');
 
 }
@@ -125,7 +129,7 @@ function FishyTankAction(){
 
 function SpinnyLifterAction (){
   console.log("Spinny Lifter Action");
-  stage.transitionTo('SpinnyLifter');
+  stage.transitionTo('SpinnyLifterCombo');
   //SpinnyLifter2Action
 }
 
@@ -136,11 +140,10 @@ function SwishyBoatsAction(){
   
   function VortexAction(){
   console.log("Vortex Action")
-  stage.transitionTo('Vortex');
-  manager.changeState(STATE_MAGNETICVORTEX);
+  stage.transitionTo('VortexWheel');
+  //manager.changeState(STATE_MAGNETICVORTEX);
   }
-
-
+ 
 window.touchStarted = stage.touchStarted.bind(stage);
 window.touchMoved = stage.touchMoved.bind(stage);
 window.touchEnded = stage.touchEnded.bind(stage);

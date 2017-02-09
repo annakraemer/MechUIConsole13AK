@@ -89,25 +89,6 @@ function SwishyBoats(){
 									         'rect'); // shape
   this.addActor(this.fourthBoat); // Adds button "actor" to the scene
   
- /*  //slide to control speed
-  this.fixedPositionSlider =  new Slider(
-                           windowWidth*0.26, // x position
-                           windowHeight*0.5, // y position
-                           windowWidth*0.5, // size of slider
-                           0, // min value of slider
-                           100, // max value of slider
-                           0, // default value of slider
-                            this.fixedChangePosition.bind(this)); // action to call on slider change
-  this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
-  this.addActor(this.fixedPositionSlider); // adds slider to scene
-  
-  //slide label
-  this.fixedSlideLabel = new Label(
-                       windowWidth*0.5, // x position
-                       windowHeight*0.42, // y position
-                       "Boat 1 Position\n\n\nleft                                           right", // text
-                       {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
-  this.addActor(this.fixedSlideLabel); // adds text to scene*/
 }
 
 _inherits(SwishyBoats, Scene);

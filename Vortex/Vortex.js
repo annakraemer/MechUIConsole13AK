@@ -39,7 +39,8 @@ function Vortex(){
 									         this.demoAction.bind(this), // action to call
 									         'rect'); // shape
   this.addActor(this.demo); // Adds button "actor" to the scene
-
+  
+/*
   //slide to control speed
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.26, // x position
@@ -59,6 +60,7 @@ function Vortex(){
                        "Speed\n\n\n0                                           100", // text
                        {size: windowWidth*0.045, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
+*/
 
 }
 

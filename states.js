@@ -46,7 +46,7 @@ var FISHYTANK = {
   id: 2,
   master: {
     values: {
-      fishyMotorSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
+      fishyStepperSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
     },
     events: {
       spinTank: function spinTank() { manager.sendEvent(0, 2); }
@@ -68,7 +68,8 @@ var MAGNETICVORTEX = {
     values: {
       motorSpeed: new HardwareValue(3, 0, Manager.TYPE_UINT16),
       motorDir: new HardwareValue(3, 1, Manager.TYPE_UINT16),
-      DCMotorSpeed: new HardwareValue(3, 2, Manager.TYPE_UINT16)
+      DCMotorSpeed: new HardwareValue(3, 2, Manager.TYPE_UINT16),
+      dialPosition: new HardwareValue(3, 3, Manager.TYPE_UINT16)
     },
     events: {
       pistonStop: function pistonStop() { manager.sendEvent(0, 3); },
