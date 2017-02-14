@@ -16,8 +16,12 @@ function SpinnyLifterCombo(){
   this.bgBorder = new BackgroundBorder();
   this.addActor(this.bgBorder);
   
+  //create home button
+  
   this.homeButton = new HomeButton(homeAction);
   this.addActor(this.homeButton);
+  
+  //add title
   
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Spinny Lifters", {size:70, leading:50});
   this.addActor(this.title);
@@ -96,9 +100,9 @@ function SpinnyLifterCombo(){
   
 }
 
-
 _inherits(SpinnyLifterCombo, Scene);
 
+ ///////////////////////////////SPINNY LIFTER FUNCTIONS///////////////////////////////
 
 SpinnyLifterCombo.prototype.setup = function(){
   console.log("Changed state to SPINNYLIFTER");
@@ -111,7 +115,6 @@ SpinnyLifterCombo.prototype.demo1Action = function() {
   console.log ("Demo  1 button");
   SPINNYLIFTER.master.events.cycleBall();
 }
-
 //demo 2 button action
 
 SpinnyLifterCombo.prototype.demo2Action = function() {

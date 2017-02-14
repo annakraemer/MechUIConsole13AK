@@ -82,14 +82,15 @@ function setup()
   SwishyBoatsMenuScene = new SwishyBoatsMenuScene();
   stage.addScene('SwishyBoatsMenuScene', SwishyBoatsMenuScene);
   
-  Vortex = new Vortex();
-  stage.addScene('Vortex', Vortex);
+  VortexWheel = new VortexWheel();
+  stage.addScene('VortexWheel', VortexWheel);
   
   SpinnyLifter = new SpinnyLifter();
   stage.addScene('SpinnyLifter', SpinnyLifter);
   
   SpinnyLifterCombo = new SpinnyLifterCombo();
   stage.addScene('SpinnyLifterCombo', SpinnyLifterCombo);
+ 
   
   stage.transitionTo('ConsoleOpeningScene');
 
