@@ -1,4 +1,4 @@
-<<<<<<< HEAD:SwishyBoats/SwishyBoats2.js
+//<<<<<<< HEAD:Swishy.Boats/SwishyBoats2.js
 //SwishyBoats2: sliders to manually move the swishyboats
 
 "use strict";
@@ -134,7 +134,7 @@ SwishyBoats2.prototype.position4 = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(SWISHYBOATS.master.values.boat4Pos, slidePosition);
 }
-=======
+//=======
 //SwishyBoats2: sliders to manually move the swishyboats
 
 "use strict";
@@ -270,5 +270,5 @@ SwishyBoats2.prototype.position4 = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(SWISHYBOATS.master.values.boat4Pos, slidePosition);
 }
->>>>>>> 5042d87fd6f8f69a82a781a5f690bcc33d7ff0a2:SwishyBoats2.js
+//>>>>>>> 5042d87fd6f8f69a82a781a5f690bcc33d7ff0a2:SwishyBoats2.js
   

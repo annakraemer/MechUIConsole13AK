@@ -1,4 +1,3 @@
-<<<<<<< HEAD:SwishyBoats/SwishyBoats.js
 //Scene: SwishyBoats created by Anna, Edited by Sophia and Allyse` 
 //NEED: split into different scenes: demo versus manual, then one with manual sliders and one with the demos here
 
@@ -132,7 +131,7 @@ SwishyBoats.prototype.fourthBoatAction = function() {
 /* SwishyBoats.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(SWISHYBOATS.master.values.boat1Pos, slidePosition);*/
-=======
+//=======
 //Scene: SwishyBoats created by Anna, Edited by Sophia and Allyse` 
 //NEED: split into different scenes: demo versus manual, then one with manual sliders and one with the demos here
 
@@ -285,4 +284,4 @@ SwishyBoats.prototype.fourthBoatAction = function() {
 /* SwishyBoats.prototype.fixedChangePosition = function(slidePosition) {
   console.log("Current value of slider is " + slidePosition);
   manager.change(SWISHYBOATS.master.values.boat1Pos, slidePosition);*/
->>>>>>> 5042d87fd6f8f69a82a781a5f690bcc33d7ff0a2:SwishyBoats.js
+
