@@ -46,7 +46,7 @@ var FISHYTANK = {
   id: 2,
   master: {
     values: {
-      fishyStepperSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
+      fishyMotorSpeed: new HardwareValue(2, 0, Manager.TYPE_UINT16)
     },
     events: {
       spinTank: function spinTank() { manager.sendEvent(0, 2); }
@@ -69,7 +69,7 @@ var MAGNETICVORTEX = {
       motorSpeed: new HardwareValue(3, 0, Manager.TYPE_UINT16),
       motorDir: new HardwareValue(3, 1, Manager.TYPE_UINT16),
       DCMotorSpeed: new HardwareValue(3, 2, Manager.TYPE_UINT16),
-      dialPosition: new HardwareValue(3, 3, Manager.TYPE_UINT16)
+      dialPosition: new HardwareValue(3, 3, Manager.TYPE_UINT8)
     },
     events: {
       pistonStop: function pistonStop() { manager.sendEvent(0, 3); },
@@ -167,15 +167,12 @@ var SWISHYBOATS = {
       boat4Pos: new HardwareValue(7, 3, Manager.TYPE_UINT16)
     },
     events: {
-      demo: function demo() { manager.sendEvent(0, 7); },
-      cycleEntranceStop: function cycleEntranceStop() { manager.sendEvent(1, 7); },
-      cycleExitStop: function cycleExitStop() { manager.sendEvent(2, 7); },
-      cycleBall: function cycleBall() { manager.sendEvent(3, 7); },
-      firstBoat: function firstBoat() { manager.sendEvent(4, 7); },
-      lastBoat: function lastBoat() { manager.sendEvent(5, 7); },
-      stopBoats: function stopBoats() { manager.sendEvent(6, 7); },
-      entranceStopOn: function entranceStopOn() { manager.sendEvent(7, 7); },
-      entranceStopOff: function entranceStopOff() { manager.sendEvent(8, 7); }
+      cycleEntranceStop: function cycleEntranceStop() { manager.sendEvent(0, 7); },
+      cycleExitStop: function cycleExitStop() { manager.sendEvent(1, 7); },
+      cycleBall: function cycleBall() { manager.sendEvent(2, 7); },
+      lastBoat: function lastBoat() { manager.sendEvent(3, 7); },
+      entranceStopOn: function entranceStopOn() { manager.sendEvent(4, 7); },
+      entranceStopOff: function entranceStopOff() { manager.sendEvent(5, 7); }
     }
   },
   tablet: {
