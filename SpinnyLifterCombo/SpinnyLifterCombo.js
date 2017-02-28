@@ -16,41 +16,22 @@ function SpinnyLifterCombo(){
   this.bgBorder = new BackgroundBorder();
   this.addActor(this.bgBorder);
   
+  //create home button
+  
   this.homeButton = new HomeButton(homeAction);
   this.addActor(this.homeButton);
   
+  //create back button
+  
+  this.BackButton = new BackButton(backAction);
+  this.addActor(this.BackButton);
+  
+  //add title
+  
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Spinny Lifters", {size:70, leading:50});
   this.addActor(this.title);
-  
-  //demo 1 button
-  
-  this.demo1 = new TextButton(
-                           windowWidth*0.235 - 100, // x position
-									         windowHeight*0.8 - 50, // y position
-									         300, // width of button
-									         100, // height of button
-									         BLUE, // color of button
-									         "Demo 1", // text on button
-									         attrs, // text attributes
-									         this.demo1Action.bind(this), // action to call
-									         'rect'); // shape
-  this.addActor(this.demo1); // Adds button "actor" to the scene
-  
-  //demo 2 button
-  
-  this.demo2 = new TextButton(
-                           windowWidth*0.69 - 100, // x position
-									         windowHeight*0.8 - 50, // y position
-									         300, // width of button
-									         100, // height of button
-									         BLUE, // color of button
-									         "Demo 2", // text on button
-									         attrs, // text attributes
-									         this.demo2Action.bind(this), // action to call
-									         'rect'); // shape
-  this.addActor(this.demo2); // Adds button "actor" to the scene
-  
-  //slide to control speed for lifter 1
+   
+  //slide to control speed for lifter 1//
   
   this.fixedPositionSlider =  new Slider(
                            windowWidth*0.1, // x position
@@ -63,7 +44,7 @@ function SpinnyLifterCombo(){
   this.fixedPositionSlider.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider); // adds slider to scene
   
-  //slide label 1 
+  //slide label for lifter 1//
   
   this.fixedSlideLabel = new Label(
                        windowWidth*0.28, // x position
@@ -72,7 +53,7 @@ function SpinnyLifterCombo(){
                        {size: windowWidth*0.03, leading: windowHeight*0.09}); // text attributes
   this.addActor(this.fixedSlideLabel); // adds text to scene
   
-  //slide to control speed for lifter 2 
+  //slide to control speed for lifter 2// 
   
   this.fixedPositionSlider2 =  new Slider(
                            windowWidth*0.54, // x position
@@ -85,7 +66,7 @@ function SpinnyLifterCombo(){
   this.fixedPositionSlider2.sliderImage(logo); // "sliderImage" sets the image of the knob of the slider object
   this.addActor(this.fixedPositionSlider2); // adds slider to scene
   
-  //slide label 2 
+  //slide label for lifter 2//
   
   this.fixedSlideLabel = new Label(
                        windowWidth*0.725, // x position
@@ -96,27 +77,15 @@ function SpinnyLifterCombo(){
   
 }
 
-
 _inherits(SpinnyLifterCombo, Scene);
 
+ ///////////////////////////////SPINNY LIFTER FUNCTIONS///////////////////////////////
+ 
+//change state into SPINNYLIFTER//
 
 SpinnyLifterCombo.prototype.setup = function(){
   console.log("Changed state to SPINNYLIFTER");
   manager.changeState(STATE_SPINNYLIFTER);
-}
-
-//demo 1 button action
-
-SpinnyLifterCombo.prototype.demo1Action = function() {
-  console.log ("Demo  1 button");
-  SPINNYLIFTER.master.events.cycleBall();
-}
-
-//demo 2 button action
-
-SpinnyLifterCombo.prototype.demo2Action = function() {
-  console.log ("Demo 2 button");
-  SPINNYLIFTER2.master.events.cycleBall();
 }
 
 //update slider 1 position
@@ -135,4 +104,10 @@ SpinnyLifterCombo.prototype.fixedChangePosition2 = function(slidePosition) {
 
 SpinnyLifterCombo.prototype.finishedAction = function() {
   stage.resume();
+}
+
+function backAction(){
+  manager.changeState(STATE_IDLE);
+  console.log("back button pressed");
+  stage.transitionTo('SpinnyLifterMenuScene');
 }

@@ -10,6 +10,7 @@ function preload()
   logo = loadImage("/libs/images/redcircle.png");
   rightBoat = loadImage("/MechUIConsole13AK/rightBoat.png");
   leftBoat = loadImage("/MechUIConsole13AK/leftBoat.png");
+  useImage = loadImage("/libs/images/imagewheel.png"); 
 }
 
 MASTER = true;
@@ -27,8 +28,15 @@ SwishyBoats,
 SwishyBoats2,
 SwishyBoatsMenuScene,
 Vortex,
+FishyTank,
 VortexWheel,
-SpinnyLifter;
+SpinnyLifter,
+MagneticVortexMenuScene,
+BernoulliFan,
+FishyTankMenuScene,
+SelectMenuScene,
+BernoulliMenuScene,
+SpinnyLifterMenuScene;
 
 function setup()
 {
@@ -38,6 +46,8 @@ function setup()
   //manager = new Manager();
   
   attrs = {fill:0, size:50, align:CENTER, style:NORMAL, leading:50};
+  
+  vortexAttr = {fill:0, size:50, align:CENTER, style:NORMAL, leading:50};
   
   resizeCanvas(windowWidth, windowHeight);
   
@@ -66,12 +76,15 @@ function setup()
   
   AdminSketch = new AdminSketch(manager, stage, BCSketch, pickGameButtonNames, pickGameButtonActions);
   stage.addScene('AdminSketch', AdminSketch);
-  
+  /*
   SpeedometerPage1 = new SpeedometerPage1();
   stage.addScene('SpeedometerPage1', SpeedometerPage1);
-  
+  */
   SpeedometerPage2 = new SpeedometerPage2();
   stage.addScene('SpeedometerPage2', SpeedometerPage2);
+  
+  SelectMenuScene  = new SelectMenuScene();
+  stage.addScene('SelectMenuScene', SelectMenuScene);
   
   SwishyBoats = new SwishyBoats();
   stage.addScene('SwishyBoats', SwishyBoats);
@@ -79,17 +92,37 @@ function setup()
   SwishyBoats2 = new SwishyBoats2();
   stage.addScene('SwishyBoats2', SwishyBoats2);
   
-  SwishyBoatsMenuScene = new SwishyBoatsMenuScene();
-  stage.addScene('SwishyBoatsMenuScene', SwishyBoatsMenuScene);
+  FishyTank = new FishyTank();
+  stage.addScene('FishyTank', FishyTank);
   
-  Vortex = new Vortex();
-  stage.addScene('Vortex', Vortex);
+  VortexWheel = new VortexWheel();
+  stage.addScene('VortexWheel', VortexWheel);
   
   SpinnyLifter = new SpinnyLifter();
   stage.addScene('SpinnyLifter', SpinnyLifter);
   
   SpinnyLifterCombo = new SpinnyLifterCombo();
   stage.addScene('SpinnyLifterCombo', SpinnyLifterCombo);
+  
+  BernoulliFan = new BernoulliFan();
+  stage.addScene('BernoulliFan', BernoulliFan);
+  
+  SpinnyLifterMenuScene = new SpinnyLifterMenuScene();
+  stage.addScene('SpinnyLifterMenuScene', SpinnyLifterMenuScene);
+  
+  BernoulliMenuScene = new BernoulliMenuScene();
+  stage.addScene('BernoulliMenuScene', BernoulliMenuScene);
+  
+  SwishyBoatsMenuScene = new SwishyBoatsMenuScene();
+  stage.addScene('SwishyBoatsMenuScene', SwishyBoatsMenuScene);
+  
+  MagneticVortexMenuScene = new MagneticVortexMenuScene();
+  stage.addScene('MagneticVortexMenuScene', MagneticVortexMenuScene);
+  
+  FishyTankMenuScene = new FishyTankMenuScene();
+  stage.addScene('FishyTankMenuScene', FishyTankMenuScene);
+  
+  
   
   stage.transitionTo('ConsoleOpeningScene');
 
@@ -100,12 +133,12 @@ function draw() {
 }
 
 function startGame(){
-  stage.transitionTo('menuScene');
+  stage.transitionTo('SelectMenuScene');
 }
 
 function homeAction(){
   manager.changeState(STATE_IDLE);
-  stage.transitionTo('menuScene');
+  stage.transitionTo('SelectMenuScene');
   console.log("home button clicked");
 }
 
@@ -123,14 +156,13 @@ function openingSceneAction() {
 
 function FishyTankAction(){
   console.log("Fishy Tank Action");
-  stage.transitionTo('SpeedometerPage1');
+  stage.transitionTo('FishyTankMenuScene');
 }
 
 
 function SpinnyLifterAction (){
   console.log("Spinny Lifter Action");
-  stage.transitionTo('SpinnyLifterCombo');
-  //SpinnyLifter2Action
+  stage.transitionTo('SpinnyLifterMenuScene');
 }
 
 function SwishyBoatsAction(){
@@ -138,11 +170,11 @@ function SwishyBoatsAction(){
   stage.transitionTo('SwishyBoatsMenuScene');
 }
   
-  function VortexAction(){
+function VortexAction(){
   console.log("Vortex Action")
-  stage.transitionTo('VortexWheel');
+  stage.transitionTo('MagneticVortexMenuScene');
   //manager.changeState(STATE_MAGNETICVORTEX);
-  }
+}
  
 window.touchStarted = stage.touchStarted.bind(stage);
 window.touchMoved = stage.touchMoved.bind(stage);

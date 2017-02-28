@@ -82,7 +82,7 @@ SpeedometerPage1.prototype.finishedAction = function() {
 */
 
 //FishyTank - edited by Chloe, edited Sophia
-
+/*
 "use strict";
 
 function FishyTank(){
@@ -104,19 +104,7 @@ function FishyTank(){
   
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Fishy Tank", {size:70, leading:50});
   this.addActor(this.title);
-}
-
-_inherits(SpeedometerPage1, Scene);
-
-  
-  
-  //this.nextButton = new NextButton(this.runCommand.bind(this));
-  //this.addActor(this.nextButton);
-
-  /////////////////////////////// BUTTON AND DIAL /////////////////////////////////
-  
-  //demo button
-  //PUT IN PICTURE FOR BUTTON
+    
   this.demo1 = new TextButton(
                            windowWidth*0.475 - 100, // x position
 									         windowHeight*0.8 - 50, // y position
@@ -131,6 +119,19 @@ _inherits(SpeedometerPage1, Scene);
   
   
   
+}
+
+_inherits(SpeedometerPage1, Scene);
+
+  
+  //this.nextButton = new NextButton(this.runCommand.bind(this));
+  //this.addActor(this.nextButton);
+
+  /////////////////////////////// BUTTON AND DIAL /////////////////////////////////
+  
+  //demo button
+  //PUT IN PICTURE FOR BUTTON
+
   
 
 function SpeedometerPage1()
@@ -202,4 +203,4 @@ SpeedometerPage1.prototype.demoAction = function(){
   FISHYTANK.master.events.spinTank;
   
 }
-
+*/
