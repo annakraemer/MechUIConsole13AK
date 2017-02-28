@@ -21,7 +21,6 @@ function SpeedometerPage2()
   this.nextButton = new NextButton(this.runCommand.bind(this));
   this.homeButton = new HomeButton(homeAction);
   
-  
   this.addActor(this.background);
   
   this.addActor(this.speedometer);
