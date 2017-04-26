@@ -3,30 +3,30 @@
 "use strict";
 
 function SpinnyLifterMenuScene() {
-  
+
   /////////////////////////////////BASIC SETUP/////////////////////////////////
-  
+
   Scene.call(this);
-  
+
   attrs = {size:50, leading:25};
 
  //Setting maximum variables
- 
+
   this.maxDistance = 200;
-  
+
   this.bgBorder = new BackgroundBorder();
   this.addActor(this.bgBorder);
-  
+
   this.homeButton = new HomeButton(homeAction);
   this.addActor(this.homeButton);
-  
+
   this.title = new Label(windowWidth/2, windowHeight*0.16, "Spinny Lifter Menu", {size:70, leading:45});
   this.addActor(this.title);
-  
+
  /////////////////////////////// BUTTONS /////////////////////////////////
-  
- //demo lifter 1 button// 
-  
+
+ //demo lifter 1 button//
+
  this.demo1 = new TextButton(
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.4 - 50, // y position
@@ -38,9 +38,9 @@ function SpinnyLifterMenuScene() {
 									         this.demo1Action.bind(this), // action to call
 									         'rect'); // shape
   this.addActor(this.demo1); // Adds button "actor" to the scene
-  
+
   //demo lifter 2 button//
-  
+
   this.demo2 = new TextButton(
                            windowWidth*0.6 - 100, // x position
 									         windowHeight*0.4 - 50, // y position
@@ -52,9 +52,9 @@ function SpinnyLifterMenuScene() {
 									         this.demo2Action.bind(this), // action to call
 									         'rect'); // shape
   this.addActor(this.demo2); // Adds button "actor" to the scene
-  
+
   //manally play game button//
-  
+
   this.manual = new TextButton(
                            windowWidth*0.395 - 100, // x position
 									         windowHeight*0.63 - 50, // y position
@@ -66,7 +66,7 @@ function SpinnyLifterMenuScene() {
 									         this.manualAction.bind(this), // action to call
 									         'rect'); // shape
   this.addActor(this.manual); // Adds button "actor" to the scene
-  
+
 }
 
 _inherits(SpinnyLifterMenuScene, Scene);
@@ -96,5 +96,5 @@ SpinnyLifterMenuScene.prototype.demo2Action = function() {
 
 SpinnyLifterMenuScene.prototype.manualAction = function() {
   console.log("manual transition");
-  stage.transitionTo('SpinnyLifterCombo');
+  stage.transitionTo('SpinnyLifterScene');
 }

@@ -20,44 +20,44 @@ var timeoutValue = 600000;
 function BCSketch(managerName, stageName)
 {
   console.log("created BCSketch");
-  
+
   this.managerName = managerName;
   this.stageName = stageName;
-  
+
   this.managerStates = [true, true, true, true, true, true, true, true];
-  
+
   ballSensorArr = [0,0,0,0];
   desiredLoc = 0;
   this.lastLoc = 0;
-    
+
   this.amibs = ['AMIB1', 'AMIB2', 'AMIB3']
   this.amibReadyArr = [false, false, false];
-  
+
   //call 'this.checkingEnabled = false' to disable checking
   this.checkingEnabled = true;
-  
+
   this.noBallChecked1 = false;
   this.noBallChecked2 = false;
   this.noBallChecked3 = false;
   this.noBallChecked4 = false; // added new noBallChecked variable for every location
-  
+
   //makes sure checkBall was called and not just change state
   this.checkBallCalled = false;
-  
+
   attrs = {fill:0, size:50, align:CENTER, style:NORMAL, leading:50};
-  
+
   this.errorScene = new ErrorScene('ErrorScene', "Error!", null);
   stage.addScene('ErrorScene', this.errorScene);
 
   this.managerName.setEventHandler(BALLCHECK.tablet.events.resume, this.resumeAction.bind(this));
-  this.managerName.setEventHandler(BALLCHECK.tablet.events.checkBallDone, this.moveBall.bind(this)); 
+  this.managerName.setEventHandler(BALLCHECK.tablet.events.checkBallDone, this.moveBall.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib1Ready, this.amib1ReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib2Ready, this.amib2ReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib3Ready, this.amib3ReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib1NotReady, this.amib1NotReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib2NotReady, this.amib2NotReadyState.bind(this));
   this.managerName.setEventHandler(BALLCHECK.tablet.events.amib3NotReady, this.amib3NotReadyState.bind(this));
-  
+
 }
 _inherits(BCSketch, Scene);
 
@@ -69,26 +69,26 @@ BCSketch.prototype.checkBall = function() {
   desiredLoc = arguments[0];
   nextScene = arguments[1];
   nextState = arguments[2];
-  displayMessage = arguments[3]; 
+  displayMessage = arguments[3];
 
   previousTimeout = stage.activeScene.timeoutTime;
   stage.activeScene.timeoutTime = timeoutValue;
-  stage.activeScene.resetTimeout();    
-    
+  stage.activeScene.resetTimeout();
+
   if(!this.checkingEnabled) {
     BCSketch.finished();
     return;
   }
-    
+
   //Enable all states
   for(var i = 0; i < this.managerStates.length; i++) {
     this.managerStates[i] = this.managerName.statesEnabled[i];
     this.managerName.statesEnabled[i] = true;
   }
-  
+
   console.log("check ball");
   this.checkBallCalled = true;
-  
+
   this.managerName.forceChangeState(STATE_BALLCHECK);
 
   previousTimeout = this.stageName.activeScene.timeoutTime;
@@ -110,13 +110,13 @@ BCSketch.prototype.checkSensors = function() {
 
       if(!(typeof displayMessage === "undefined")) this.stageName.pause(displayMessage);
       else this.stageName.pause("Checking for Ball");
-    
+
       BALLCHECK.master.events.checkSensors();
       console.log("checked sensors");
     }
     else {
       BCSketch.finished();
-    } 
+    }
   }
 }
 
@@ -135,7 +135,7 @@ BCSketch.prototype.moveBall = function() {
       this.lastLoc = (i+1);
     }
   }
-  
+
   //check for multiple balls
   console.log("checking for multiple balls");
   var multiBall = false;
@@ -148,7 +148,7 @@ BCSketch.prototype.moveBall = function() {
     BCSketch.multiBall();
     return;
   }
-  
+
   //check for no ball
   //console.log("checking for no ball");
   //var noBall = true;
@@ -171,12 +171,12 @@ BCSketch.prototype.moveBall = function() {
       BCSketch.noBall();
     return;
   }
-  
+
   this.noBallChecked1 = false;
   this.noBallChecked2 = false;
   this.noBallChecked3 = false;
   this.noBallChecked4 = false;
-  
+
   //check for ball at desiredLoc
   console.log("checking desired location: " + desiredLoc);
   if(ballSensorArr[(desiredLoc-1)]) {
@@ -184,15 +184,15 @@ BCSketch.prototype.moveBall = function() {
     BCSketch.finished();
     return;
   }
-     
+
   //check ball locations and move ball
   console.log("checking all locations");
   if(ballSensorArr[0])
     BCSketch.ballLoc1Cycle();
   else if(ballSensorArr[1])
-    BCSketch.ballLoc2Cycle();  
+    BCSketch.ballLoc2Cycle();
   else if(ballSensorArr[2])
-    BCSketch.ballLoc3Cycle();  
+    BCSketch.ballLoc3Cycle();
   else if(ballSensorArr[3])
     BCSketch.ballLoc4Cycle();
 
@@ -206,16 +206,16 @@ BCSketch.prototype.moveBall = function() {
 BCSketch.prototype.waitForBall = function() {
   console.log("called check sensors");
   this.managerName.forceChangeState(STATE_BALLCHECK);
-  
+
   previousTimeout = this.stageName.activeScene.timeoutTime;
   this.stageName.activeScene.timeoutTime = timeoutValue;
   this.stageName.activeScene.resetTimeout();
-  
+
   desiredLoc = arguments[0];
   nextScene = arguments[1];
   nextState = arguments[2];
   displayMessage = arguments[3];
-  
+
   BALLCHECK.master.events.waitForBall();
 }
 
@@ -249,15 +249,15 @@ BCSketch.prototype.ballLoc4Cycle = function() {
 
 BCSketch.prototype.resumeAction = function() {
   console.log("resumed");
-  
+
   this.stageName.activeScene.timeoutTime = previousTimeout;
   this.stageName.activeScene.resetTimeout();
-  
+
   if(!(typeof arguments[0] === "undefined")) desiredLoc = arguments[0];
   if(!(typeof arguments[1] === "undefined")) nextScene = arguments[1];
   if(!(typeof arguments[2] === "undefined")) nextState = arguments[2];
   if(!(typeof arguments[3] === "undefined")) displayMessage = arguments[3];
-  
+
   this.checkBallCalled = true;
   BCSketch.checkBall(desiredLoc, nextScene, nextState, displayMessage);
 }
@@ -276,7 +276,7 @@ BCSketch.prototype.noBall = function() {
   if(!this.noBallChecked1) {
     this.noBallChecked1 = true;
     this.stageName.pause("No Ball: Cycling First Location");
-    
+
     //could be stuck in spinnylifter 1
     BCSketch.ballLoc1Cycle();
 
@@ -291,7 +291,7 @@ BCSketch.prototype.noBall2 = function() {
   if(!this.noBallChecked2) {
     this.noBallChecked2 = true;
     this.stageName.pause("No Ball: Cycling Second Location");
-    
+
     //could be stuck in swishy boats
     BCSketch.ballLoc2Cycle();
 
@@ -306,13 +306,13 @@ BCSketch.prototype.noBall3 = function() {
   if(!this.noBallChecked3) {
     this.noBallChecked3 = true;
     this.stageName.pause("No Ball: Cycling Third Location");
-    
+
     //could be stuck in spinnylifter 2
     BCSketch.ballLoc3Cycle();
 
     BCSketch.resumeAction();
   }
-  
+
   else {
     BCSketch.noBall4();
   }
@@ -321,7 +321,7 @@ BCSketch.prototype.noBall4 = function() {
   if(!this.noBallChecked4) {
     this.noBallChecked4 = true;
     this.stageName.pause("No Ball: Cycling Fourth Location");
-    
+
     BCSketch.ballLoc4Cycle();
 
     BCSketch.resumeAction();
@@ -348,11 +348,11 @@ BCSketch.prototype.multiBall = function() {
 BCSketch.prototype.finished = function() {
   console.log("Transition to " + nextScene);
   this.stageName.resume();
-   
+
   for(var i = 0; i < this.managerStates.length; i++) {
     this.managerName.statesEnabled[i] = this.managerStates[i];
   }
-  
+
   try {this.stageName.activeScene.resetScene(); } //Requires your scene to have a function named resetScene
   catch(error) {console.log("No reset scene function");}
   this.stageName.activeScene.timeoutTime = previousTimeout;
@@ -391,16 +391,16 @@ BCSketch.prototype.updateReadiness = function(amibNumber, readiness)
 {
   var amibIndex = amibNumber - 1;
   this.amibReadyArr[amibIndex] = readiness;
-  
+
   var readyText = "";
   if(readiness) readyText = " ready to check ball";
   else readyText = " not ready to check ball";
-  
+
   //console.log(this.amibs[amibIndex] + readyText);
-  
+
   var readyToCheckSensors = true;
   for(var i = 0; i < this.amibReadyArr.length; i++) readyToCheckSensors = readyToCheckSensors & this.amibReadyArr[i];
-  
+
   if(readyToCheckSensors)
     BCSketch.checkSensors();
 }

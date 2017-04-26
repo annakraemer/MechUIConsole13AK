@@ -65,7 +65,7 @@ MagneticVortexMenuScene.prototype.setup = function(){
 
 MagneticVortexMenuScene.prototype.demoAction = function() {
   console.log ("Demo button");
-  //MAGNETICVORTEX.master.events.cycleBall();
+  MAGNETICVORTEX.master.events.demo();
 }
 
 //game play action

@@ -117,7 +117,7 @@ _inherits(SelectMenuScene, Scene);
 
 SelectMenuScene.prototype.FishyButtonAction = function(){
   console.log("Fishy Tank Action");
-  stage.transitionTo('FishyTankMenuScene');
+  stage.transitionTo('FishyTitleScene');
 }
 
 SelectMenuScene.prototype.SpinnyButtonAction = function(){

@@ -69,8 +69,8 @@ SwishyBoatsMenuScene.prototype.setup = function(){
 //transition to demo scene//
 
 SwishyBoatsMenuScene.prototype.demoAction = function() {
-  console.log ("demo transition");
-  //stage.transitionTo('SwishyBoats'); // this should be a demo function
+  console.log ("demoing cycleBall");
+  SWISHYBOATS.master.events.cycleBall();
 }
 
 //transition to the manual play scene//

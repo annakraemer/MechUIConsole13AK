@@ -39,7 +39,7 @@ function VortexWheel(){
   //function Wheel(x, y, width, height, onChange, deadZoneSize, scaler, minAngle, maxAngle)
   var wheelSize = 350;
   
-  this.wheel = new ImageWheel(windowWidth*0.5 - wheelSize/2, windowHeight*0.5 - wheelSize/2, wheelSize, wheelSize, this.MoveToAngleAction.bind(this), 0,2,0,10000000000000000000000000000000, useImage); //max angle is so large so as to allow the dial to spin all the way around many times
+  this.wheel = new ImageWheel(windowWidth*0.5 - wheelSize/2, windowHeight*0.5 - wheelSize/2, wheelSize, wheelSize, this.MoveToAngleAction.bind(this), 0,1,0,3000, useImage); //max angle is so large so as to allow the dial to spin all the way around many times
   this.addActor(this.wheel);
   
 }
@@ -56,11 +56,11 @@ VortexWheel.prototype.setup = function(){
 //move the vortex to the value of the dial in UI//
 
 VortexWheel.prototype.MoveToAngleAction = function(dialValue){
-  console.log(dialValue);
-  manager.change(MAGNETICVORTEX.master.values.dialPosition, dialValue);
-  console.log("After: " + dialValue);
+  var scaled = dialValue / 100 + 20;
+  console.log(scaled);
+  manager.change(MAGNETICVORTEX.master.values.DCMotorSpeed, scaled);
+  console.log("After: " + scaled);
 }
-
 
 function backAction(){
   manager.changeState(STATE_IDLE);

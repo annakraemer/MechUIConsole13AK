@@ -3,18 +3,18 @@ var IDLE = {
   id: 0,
   master: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -24,20 +24,29 @@ var BERNOULLIFAN = {
   master: {
     values: {
       tableAngle: new HardwareValue(1, 0, Manager.TYPE_UINT16),
-      fanAngle: new HardwareValue(1, 1, Manager.TYPE_UINT16)
+      fanAngle: new HardwareValue(1, 1, Manager.TYPE_UINT16),
+      fanPower: new HardwareValue(1, 2, Manager.TYPE_UINT16)
     },
     events: {
       demo: function demo() { manager.sendEvent(0, 1); },
       homeFan: function homeFan() { manager.sendEvent(1, 1); },
-      liftBall: function liftBall() { manager.sendEvent(2, 1); }
+      liftBall: function liftBall() { manager.sendEvent(2, 1); },
+      moveToRed: function moveToRed() { manager.sendEvent(3, 1); },
+      moveToBlue: function moveToBlue() { manager.sendEvent(4, 1); },
+      moveToYellow: function moveToYellow() { manager.sendEvent(5, 1); },
+      moveToReceive: function moveToReceive() { manager.sendEvent(6, 1); },
+      turnFanOn: function turnFanOn() { manager.sendEvent(7, 1); },
+      turnFanOff: function turnFanOff() { manager.sendEvent(8, 1); },
+      scoreGoal: function scoreGoal() { manager.sendEvent(9, 1); },
+      scoreGoalRight: function scoreGoalRight() { manager.sendEvent(10, 1); }
     }
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -54,10 +63,10 @@ var FISHYTANK = {
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -82,10 +91,10 @@ var MAGNETICVORTEX = {
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -95,7 +104,8 @@ var SPINNYLIFTER = {
   master: {
     values: {
       spinnyOffset1: new HardwareValue(4, 0, Manager.TYPE_INT16),
-      topSensor: new HardwareValue(4, 1, Manager.TYPE_UINT16)
+      topSensor: new HardwareValue(4, 1, Manager.TYPE_UINT16),
+      rotationsteps: new HardwareValue(4, 2, Manager.TYPE_INT16)
     },
     events: {
       demo: function demo() { manager.sendEvent(0, 4); },
@@ -105,10 +115,10 @@ var SPINNYLIFTER = {
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -117,7 +127,8 @@ var SPINNYLIFTER2 = {
   id: 5,
   master: {
     values: {
-      spinnyOffset1: new HardwareValue(5, 0, Manager.TYPE_UINT16)
+      spinnyOffset1: new HardwareValue(5, 0, Manager.TYPE_UINT16),
+      rotationsteps: new HardwareValue(5, 1, Manager.TYPE_INT16)
     },
     events: {
       demo: function demo() { manager.sendEvent(0, 5); },
@@ -129,10 +140,10 @@ var SPINNYLIFTER2 = {
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -141,18 +152,18 @@ var SPINNYPASSIVEDROP = {
   id: 6,
   master: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -164,7 +175,8 @@ var SWISHYBOATS = {
       boat1Pos: new HardwareValue(7, 0, Manager.TYPE_UINT16),
       boat2Pos: new HardwareValue(7, 1, Manager.TYPE_UINT16),
       boat3Pos: new HardwareValue(7, 2, Manager.TYPE_UINT16),
-      boat4Pos: new HardwareValue(7, 3, Manager.TYPE_UINT16)
+      boat4Pos: new HardwareValue(7, 3, Manager.TYPE_UINT16),
+      boatNumber: new HardwareValue(7, 4, Manager.TYPE_UINT16)
     },
     events: {
       cycleEntranceStop: function cycleEntranceStop() { manager.sendEvent(0, 7); },
@@ -172,15 +184,16 @@ var SWISHYBOATS = {
       cycleBall: function cycleBall() { manager.sendEvent(2, 7); },
       lastBoat: function lastBoat() { manager.sendEvent(3, 7); },
       entranceStopOn: function entranceStopOn() { manager.sendEvent(4, 7); },
-      entranceStopOff: function entranceStopOff() { manager.sendEvent(5, 7); }
+      entranceStopOff: function entranceStopOff() { manager.sendEvent(5, 7); },
+      test: function test() { manager.sendEvent(6, 7); }
     }
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };
@@ -227,18 +240,18 @@ var OFF = {
   id: 9,
   master: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   },
   tablet: {
     values: {
-      
+
     },
     events: {
-      
+
     }
   }
 };

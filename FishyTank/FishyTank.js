@@ -28,7 +28,6 @@ function FishyTank(){
   this.addActor(this.title);
   
   //set dimensions on the speedometer
-   
   this.speedometerWidth = windowWidth/2.67;
   this.speedometerXPos = windowWidth/2 - (this.speedometerWidth / 2);
   this.speedometerYPos = windowHeight/2 - (this.speedometerWidth / 2);
@@ -37,16 +36,14 @@ function FishyTank(){
   this.speedometerMinAngle = 135;
   this.speedometerMaxAngle = 45;
   
-  this.speedometer = new Speedometer(this.speedometerXPos, this.speedometerYPos, this.speedometerWidth, this.speedometerWidth, this.speedometerFunction, this.speedometerDeadZone, this.speedometerScalar, this.speedometerMinAngle, this.speedometerMaxAngle);
+  this.speedometer = new Speedometer(this.speedometerXPos, this.speedometerYPos, this.speedometerWidth, this.speedometerWidth, this.speedometerFunction.bind(this), this.speedometerDeadZone, this.speedometerScalar, this.speedometerMinAngle, this.speedometerMaxAngle);
   this.speedometer.z = 10;
   this.addActor(this.speedometer);
-  
 }
 
 _inherits(FishyTank, Scene);
 
 //change state to FISHYTANK//
-   
 FishyTank.prototype.setup = function(){
 manager.changeState(STATE_FISHYTANK);
 }
@@ -54,12 +51,12 @@ manager.changeState(STATE_FISHYTANK);
 //change speed to that set on the speedometer//
 
 FishyTank.prototype.speedometerFunction = function(angle){
-  console.log("posVal " + angle);
-  console.log("speed value" + (angle - 135)*(10000/270));
-  var speedValue = (angle - 135)*(10000/270);
-  manager.change(FISHYTANK.master.values.fishyStepperSpeed, speedValue);
-  //this should send a speed to the motor to tell it how fast to go
-  //no value needs to be retuned
+  var offOrOn = (angle - 135) / 270;
+  var rescale = offOrOn * 40 + 20;
+ 
+  console.log(angle);
+  console.log(rescale);
+  manager.change(FISHYTANK.master.values.fishyMotorSpeed, rescale);
 }
 
 FishyTank.prototype.runCommand = function(){
