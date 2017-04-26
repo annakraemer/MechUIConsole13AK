@@ -22,22 +22,17 @@ var STATE_IDLE = 0;
 var openingScene,
 AdminSketch,
 BCSketch,
-SpeedometerPage1,
-SpeedometerPage2,
 SwishyBoats,
 SwishyBoats2,
 SwishyBoatsMenuScene,
-Vortex,
-FishyTank,
-VortexWheel,
+VortexSketch,
 SpinnyLifter,
-MagneticVortexMenuScene,
 BernoulliFan,
-FishyTankMenuScene,
 SelectMenuScene,
 BernoulliMenuScene,
 SpinnyLifterMenuScene,
-StartScene;
+StartScene,
+FishySketch;
 
 function setup()
 {
@@ -65,12 +60,6 @@ function setup()
 
   AdminSketch = new AdminSketch(manager, stage, BCSketch, pickGameButtonNames, pickGameButtonActions);
   stage.addScene('AdminSketch', AdminSketch);
-  /*
-  SpeedometerPage1 = new SpeedometerPage1();
-  stage.addScene('SpeedometerPage1', SpeedometerPage1);
-  */
-  SpeedometerPage2 = new SpeedometerPage2();
-  stage.addScene('SpeedometerPage2', SpeedometerPage2);
 
   SelectMenuScene  = new SelectMenuScene();
   stage.addScene('SelectMenuScene', SelectMenuScene);
@@ -80,12 +69,6 @@ function setup()
 
   SwishyBoats2 = new SwishyBoats2();
   stage.addScene('SwishyBoats2', SwishyBoats2);
-
-  FishyTank = new FishyTank();
-  stage.addScene('FishyTank', FishyTank);
-
-  VortexWheel = new VortexWheel();
-  stage.addScene('VortexWheel', VortexWheel);
 
   SpinnyLifterScene = new SpinnyLifterScene("TITLE!");
   stage.addScene('SpinnyLifterScene', SpinnyLifterScene);
@@ -101,15 +84,12 @@ function setup()
 
   SwishyBoatsMenuScene = new SwishyBoatsMenuScene();
   stage.addScene('SwishyBoatsMenuScene', SwishyBoatsMenuScene);
-
-  MagneticVortexMenuScene = new MagneticVortexMenuScene();
-  stage.addScene('MagneticVortexMenuScene', MagneticVortexMenuScene);
-
-  FishyTankMenuScene = new FishyTankMenuScene();
-  stage.addScene('FishyTankMenuScene', FishyTankMenuScene);
   
   StartScene = new StartScene(startAction);
   stage.addScene("StartScene", StartScene);
+
+  FishySketch = new FishySketch();
+  stage.addScene('FishySketch', FishySketch);
 
   stage.transitionTo('StartScene');
 

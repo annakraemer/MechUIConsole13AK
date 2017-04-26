@@ -36,7 +36,6 @@ function SelectMenuScene() {
   ////////////////////////////// BUTTONS /////////////////////////////////
   
   //Fishy Tank button
- 
  this.FishyButton = new TextButton(
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.35 - 50, // y position
@@ -50,7 +49,6 @@ function SelectMenuScene() {
   this.addActor(this.FishyButton); // Adds button "actor" to the scene
   
   //Spinny Lifter button
-  
   this.SpinnyButton = new TextButton(
                            windowWidth*0.63 - 100, // x position
 									         windowHeight*0.58 - 50, // y position
@@ -64,7 +62,6 @@ function SelectMenuScene() {
   this.addActor(this.SpinnyButton); // Adds button "actor" to the scene
   
   //Magnetic Vortex button
-  
   this.VortexButton = new TextButton(
                            windowWidth*0.63 - 100, // x position
 									         windowHeight*0.35 - 50, // y position
@@ -78,7 +75,6 @@ function SelectMenuScene() {
   this.addActor(this.VortexButton); // Adds button "actor" to the scene
   
   //Swishy Boats button
-  
   this.SwishyButton = new TextButton(
                            windowWidth*0.2 - 100, // x position
 									         windowHeight*0.58 - 50, // y position
@@ -92,7 +88,6 @@ function SelectMenuScene() {
   this.addActor(this.SwishyButton); // Adds button "actor" to the scene
   
   //Bernoulli Fan button
-  
   this.FanButton = new TextButton(
                            windowWidth*0.425 - 100, // x position
 									         windowHeight*0.8 - 50, // y position
@@ -132,8 +127,7 @@ SelectMenuScene. prototype.SwishyButtonAction = function(){
   
 SelectMenuScene.prototype.VortexButtonAction = function(){
   console.log("Vortex Action")
-  stage.transitionTo('MagneticVortexMenuScene');
-  //manager.changeState(STATE_MAGNETICVORTEX);
+  stage.transitionTo('VortexTitleScene');
 }
 
 SelectMenuScene.prototype.FanButtonAction = function(){
