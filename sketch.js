@@ -91,6 +91,9 @@ function setup()
   FishySketch = new FishySketch();
   stage.addScene('FishySketch', FishySketch);
 
+  VortexSketch = new VortexSketch();
+  stage.addScene('VortexSketch', VortexSketch);
+
   stage.transitionTo('StartScene');
 
 }
